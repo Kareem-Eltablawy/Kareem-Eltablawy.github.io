@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kareem Eltablawy — Software Engineer & Game Developer</title>
-    <meta name="description" content="Software Engineer and Game Developer specialising in Unreal Engine 5 native C++, Unity C#, and hardware-aware game systems.">
+    <title>Kareem Eltablawy — AI & Gameplay Systems Engineer</title>
+    <meta name="description" content="AI and Gameplay Systems Engineer specialising in UE5 native C++, Unity C#, and hardware-aware game systems.">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -390,7 +390,7 @@
     <!-- HEADER -->
     <header>
         <div class="name">Kareem Eltablawy<span class="cursor"></span></div>
-        <div class="role-line">Software Engineer &amp; Game Developer &nbsp;·&nbsp; UE5 C/C++ &nbsp;·&nbsp; Unity C# &nbsp;·&nbsp; .NET</div>
+        <div class="role-line">AI &amp; Gameplay Systems Engineer &nbsp;·&nbsp; UE5 C/C++ &nbsp;·&nbsp; Unity C# &nbsp;·&nbsp; .NET</div>
         <div class="contacts">
             <a href="tel:+201557779691">+20 155 777 9691</a>
             <a href="mailto:kareem.rafat.eltablawy@gmail.com">kareem.rafat.eltablawy@gmail.com</a>
@@ -407,29 +407,13 @@
             <section class="section">
                 <div class="section-label">Profile</div>
                 <p class="summary">
-                    Software Engineer and Game Developer specializing in Unreal Engine 5 native C++ and Unity C#. Core gameplay systems built with zero VM overhead, zero runtime ticks, and no Blueprint in hot paths — architecture that treats every CPU cycle as owned, not borrowed. NPC systems are built for depth: dual-proxy animation pipelines evaluated on the worker thread, personality-driven look-at with no central authority, HyperAwareness behavioral spheres, and emotional state machines that blend continuously from discomfort through anger to confront without a single pose cut. Every behavioral parameter lives in a typed Data Asset, cached once at BeginPlay and never accessed at runtime again. Content scales through subclass and editor fill — never through code changes.
+                    AI and Gameplay Systems Engineer building production-grade NPC, combat, and animation systems in native UE5 C++ — no Blueprint runtime dependency, no tick overhead, no virtual machine. Enemy brains, companion behavior, player systems, and animation proxies all designed around one rule: decisions live in data, evaluation runs in C++, and runtime overhead is justified or it is removed. The same philosophy carries across Unity through event-driven, data-configured, zero-polling architecture.
                 </p>
             </section>
 
             <!-- Work Experience -->
             <section class="section">
                 <div class="section-label">Work Experience</div>
-
-                <!-- Axiosys — lead with the external role -->
-                <div class="job">
-                    <div class="job-top">
-                        <div class="job-company">
-                            Axiosys Studios
-                            <span class="job-badge badge-contract">Contract</span>
-                        </div>
-                        <div class="job-date">Jul 2025 – Dec 2025</div>
-                    </div>
-                    <div class="job-role">Unreal Engine Developer</div>
-                    <ul>
-                        <li>Built core game state architecture in native C++ — a player-driven state machine covering active gameplay, pause, menu, and blockage states as the backbone of all session flow.</li>
-                        <li>Implemented anvil-based crafting systems and foundational gameplay mechanics in C++ with Blueprint integration kept strictly to designer-facing configuration, inheriting from optimized C++ base classes.</li>
-                    </ul>
-                </div>
 
                 <!-- Strawberries -->
                 <div class="job">
@@ -440,15 +424,29 @@
                         </div>
                         <div class="job-date">Aug 2025 – Present</div>
                     </div>
-                    <div class="job-role">Lead Unreal Engine Engineer</div>
+                    <div class="job-role">Unreal Engine Lead Engineer</div>
                     <ul>
-                        <li>Architected and own the full UE5 C++ codebase from concept to shipped systems — no Blueprint in the runtime path, no VM overhead, no tick-based evaluation anywhere in the game.</li>
-                        <li>Built a dual FAnimInstanceProxy pipeline: body proxy runs a four-priority Evaluate() chain into FCompactPose on the worker thread; face proxy handles blink alpha injection, gaze rotation, head IK via FAnimNode_ControlRig, and RigLogic blend shapes with live alpha blending — both proxies evaluated in parallel, zero AnimGraph overhead.</li>
-                        <li>Designed the full NPC behavioral stack — HyperAwareness overlap spheres, twelve FTimerHandles in the soldier brain alone, citizens as fully independent decision-makers each running their own event-driven state machine — not one bCanEverTick enabled anywhere in the system.</li>
-                        <li>Implemented continuous emotional escalation through the face proxy: neutral → discomfort → anger → confront with RigLogic correcting blend shapes every frame and every transition originating from the actual current pose via CaptureSnapshot(). No state jumps. No pose cuts.</li>
-                        <li>Built full actor pooling with overlap-based activation volumes — enemies and NPCs sit tick-disabled and hidden until the player enters range, then reset and go dormant on exit. No runtime spawning, no GC pressure, no load spikes.</li>
-                        <li>Built a flat C++ enemy AI — four states, fourteen attack sub-phases, manual parabolic jump arcs scrubbed by distance fraction, attack variants scaling from 0% to 60% combo chance by slot, full-group fan-out on team sighting, independent upper/lower body heal sequence below half HP.</li>
-                        <li>Created 10+ MetaHuman NPCs with custom facial and skeletal setups, proximity-gated facial solves, and wrap-based morph workflows for non-human characters. Integrated AI-driven motion capture and AI voice for dynamic NPC dialogue without a traditional recording pipeline.</li>
+                        <li>Shipped a Summer 2026 production MVP with five enemy archetypes, three companion types, and a MetaHuman player character — all systems in native C++ with zero Blueprint runtime paths, zero game-logic ticks, and zero runtime asset access on any hot path.</li>
+                        <li>Authored a hand-written FAnimInstanceProxy pipeline for all character types evaluating directly into FCompactPose on the worker thread — three blend modes, upper and lower body as fully independent concurrent layers, no AnimGraph VM anywhere in the pipeline.</li>
+                        <li>Built zero-tick enemy brains driven entirely by FTimerHandle one-shots, overlap callbacks, and animation-completion events — boss-depth AI includes revenge latches, live team HP injection, orbital projectile flight, and kinematic lunge math with no shared authority or coordinator class.</li>
+                        <li>Built a unified companion system for three NPC types on a shared follow FSM with world-space HoldGround anchors, managed from a single input cursor cycling all three under one team roster.</li>
+                        <li>Built citizen NPCs with parallel interaction and awareness state machines, per-bone eye tracking with exponential-decay smoothing, super-matched face and audio index pairing, and scalability-delegate LOD management — no polling.</li>
+                    </ul>
+                </div>
+
+                <!-- Axiosys -->
+                <div class="job">
+                    <div class="job-top">
+                        <div class="job-company">
+                            Axiosys Studios
+                            <span class="job-badge badge-contract">Contract</span>
+                        </div>
+                        <div class="job-date">Jul 2025 – Dec 2025</div>
+                    </div>
+                    <div class="job-role">Unreal Engine Developer</div>
+                    <ul>
+                        <li>Built core game state architecture in native C++ — a player-driven state machine covering active gameplay, pause, menu, and blockage states as the backbone of all session flow with zero Blueprint logic in runtime paths.</li>
+                        <li>Implemented anvil-based crafting systems and foundational gameplay mechanics in C++ with Blueprint integration kept strictly to designer-facing configuration, inheriting from optimized C++ base classes.</li>
                     </ul>
                 </div>
 
@@ -463,11 +461,11 @@
                     </div>
                     <div class="job-role">Unity Developer</div>
                     <ul>
-                        <li>Designed and implemented all AI decision logic from scratch in C# — Behavior Trees, FSMs, Utility AI, and GOAP — across strategy, simulation, and open-world projects sustaining large NPC counts on mobile without frame degradation. No engine AI defaults. Every system fully owned at the code level.</li>
+                        <li>Designed all AI decision logic from scratch in C# — Behavior Trees, FSMs, Utility AI, and GOAP — across strategy, simulation, and open-world projects sustaining large NPC counts on mobile without frame degradation. No engine defaults; every system fully owned at the code level.</li>
                         <li>Built full Scriptable Object pipelines as the single source of truth across all projects, with live runtime injection from ASP.NET backends via REST APIs and JSON — configuration fully decoupled from logic, no rebuild required for data changes.</li>
                         <li>Enforced near-zero update architecture across every project: Update loop reserved strictly for animation, physics, and player input; all other systems respond to C# events and UnityEvent signals. No continuous polling anywhere.</li>
-                        <li>Built world streaming and object pooling systems for large open environments with AI LOD and pooled components reducing GC pressure on mobile. Optimized 3D models in-engine — polycount reduction, LOD chain configuration, material simplification — to hit mobile frame targets without post-export fixes.</li>
-                        <li>Used AccuRig for character rigging pipelines and AI-assisted content generation for textures, materials, and asset variation with manual artistic review on every output. Delivered 11 playable games and 13 technical prototypes across PC and mobile.</li>
+                        <li>Built world streaming and object pooling systems for large open environments with AI LOD and pooled components reducing GC pressure on mobile. Applied ECS, Job System, and Burst Compiler for CPU-bound simulation workloads where single-threaded C# evaluation could not meet frame time budgets.</li>
+                        <li>Delivered 11 playable games and 13 technical prototypes across PC and mobile.</li>
                     </ul>
                 </div>
 
@@ -478,7 +476,7 @@
                             VR University Club
                             <span class="job-badge badge-volunteer">Volunteer</span>
                         </div>
-                        <div class="job-date">Feb 2025 – Nov 2025</div>
+                        <div class="job-date">Oct 2024 – Nov 2025</div>
                     </div>
                     <div class="job-role">Technical Instructor — Unity &amp; VR</div>
                     <ul>
@@ -496,7 +494,7 @@
                 <div class="project">
                     <div class="project-num">I &nbsp;—&nbsp; SUNSHINE</div>
                     <div class="project-name">SunShine <span class="project-badge-inline">· A+ Graduation Award</span></div>
-                    <div class="project-desc">Graduation capstone comprising four independently scoped indie games and a full-stack game store website. Each game was built with production-quality architecture — object pooling, event-driven NPC systems, data-driven parameters — rather than prototype shortcuts. Received A+ grade and university certificate awards.</div>
+                    <div class="project-desc">Graduation capstone comprising four independently scoped indie games and a full-stack game store website, each built with production-quality architecture — object pooling, event-driven NPC systems, data-driven parameters — rather than prototype shortcuts. Received A+ grade and university certificate awards.</div>
                     <div class="project-tags">
                         <span class="project-tag">Unity C#</span>
                         <span class="project-tag">ASP.NET</span>
@@ -509,7 +507,7 @@
                 <div class="project">
                     <div class="project-num">II &nbsp;—&nbsp; RED DUNES</div>
                     <div class="project-name">Red Dunes</div>
-                    <div class="project-desc">Market Management Simulation built on a single scalable FSM architecture. Engineered a high-performance crowd and NPC system sustaining large character counts on mobile — all decision logic written in C# with no engine AI defaults, no per-frame polling. State transitions are discrete, auditable, and cost nothing until triggered.</div>
+                    <div class="project-desc">Market Management Simulation built on a single scalable FSM architecture. High-performance crowd and NPC system sustaining large character counts on mobile — all decision logic in C# with no engine AI defaults, no per-frame polling.</div>
                     <div class="project-tags">
                         <span class="project-tag">Unity C#</span>
                         <span class="project-tag">FSM</span>
@@ -522,7 +520,7 @@
                 <div class="project">
                     <div class="project-num">III &nbsp;—&nbsp; GATHER THE PLANTS</div>
                     <div class="project-name">Gather The Plants</div>
-                    <div class="project-desc">Performance-critical mobile title with high simultaneous character counts. Built a pooled NPC system with AI LOD and event-driven state management to keep frame rates stable on low-end Android targets without sacrificing NPC behavioral fidelity at close range.</div>
+                    <div class="project-desc">Performance-critical mobile runner with high simultaneous character counts. Pooled NPC system with AI LOD and event-driven state management to hold frame rates stable on low-end Android without sacrificing behavioral fidelity at close range.</div>
                     <div class="project-tags">
                         <span class="project-tag">Unity C#</span>
                         <span class="project-tag">AI LOD</span>
@@ -534,7 +532,7 @@
                 <div class="project">
                     <div class="project-num">IV &nbsp;—&nbsp; FLORAL ESSENCE</div>
                     <div class="project-name">Floral Essence</div>
-                    <div class="project-desc">Open-world title with sensory-driven enemy AI and allied NPC combat systems running simultaneously across a large map. Built distance-based AI and animation scaling so full behavioral fidelity runs on NPCs within range while distant NPCs fall back to lightweight state evaluation — no manual per-object LOD authoring required.</div>
+                    <div class="project-desc">Open-world title with sensory-driven enemy AI and allied NPC combat systems running simultaneously across a large map. Distance-based AI and animation scaling so full behavioral fidelity runs on NPCs within range while distant NPCs fall back to lightweight state evaluation.</div>
                     <div class="project-tags">
                         <span class="project-tag">Unity C#</span>
                         <span class="project-tag">Sensory AI</span>
@@ -547,12 +545,11 @@
                 <div class="project">
                     <div class="project-num">V &nbsp;—&nbsp; IN DEVELOPMENT</div>
                     <div class="project-name">Project Moon <span class="project-badge-inline">· MVP Summer 2026</span></div>
-                    <div class="project-desc">Open-world RPG set in a Crusade-era world with fantasy elements — quest-driven exploration and deep RPG systems. Full C++ architecture for all core systems; Blueprints used only for designer-facing configuration, always inheriting from optimized C++ base classes. All character behavior, RPG stats, and quest parameters driven by Data Assets cached at BeginPlay and never read at runtime.</div>
+                    <div class="project-desc">Open-world RPG set in a Crusade-era world with fantasy elements. Full C++ architecture for all core systems; Blueprints used only for designer-facing configuration inheriting from optimized C++ base classes. All character behavior, combat systems, and quest parameters driven by Data Assets cached at BeginPlay and never read at runtime.</div>
                     <div class="project-tags">
                         <span class="project-tag">UE5 C++</span>
                         <span class="project-tag">Open World RPG</span>
                         <span class="project-tag">Data Assets</span>
-                        <span class="project-tag">Quest Systems</span>
                         <span class="project-tag">Zero-Tick</span>
                         <span class="project-tag">Actor Pooling</span>
                     </div>
@@ -611,6 +608,8 @@
                         <span class="tag lo">Utility AI</span>
                         <span class="tag lo">Event-Driven</span>
                         <span class="tag lo">Data-Driven NPC</span>
+                        <span class="tag lo">Parallel State Machines</span>
+                        <span class="tag lo">Zero-Tick Brain</span>
                     </div>
                 </div>
 
@@ -631,24 +630,28 @@
                     <div class="skill-group-label">Performance &amp; Systems</div>
                     <div class="tags">
                         <span class="tag lo">Actor Pooling</span>
-                        <span class="tag lo">Zero-Tick</span>
+                        <span class="tag lo">Zero-Tick Architecture</span>
+                        <span class="tag lo">Timer-Driven Pools</span>
                         <span class="tag lo">Multithreading</span>
                         <span class="tag lo">Memory Pooling</span>
                         <span class="tag lo">Asset Streaming</span>
                         <span class="tag lo">Data-Oriented Design</span>
+                        <span class="tag lo">Curve-Driven CMC</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
                     <div class="skill-group-label">Architecture</div>
                     <div class="tags">
-                        <span class="tag lo">Data Assets</span>
+                        <span class="tag lo">UPrimaryDataAsset</span>
                         <span class="tag lo">OOP &amp; Design Patterns</span>
                         <span class="tag lo">UPROPERTY GC</span>
+                        <span class="tag lo">TObjectPtr</span>
                         <span class="tag lo">TWeakObjectPtr</span>
                         <span class="tag lo">AC-as-Brain</span>
                         <span class="tag lo">Proxy-as-Reader</span>
                         <span class="tag lo">Zero Heap Alloc</span>
+                        <span class="tag lo">Network Prediction</span>
                     </div>
                 </div>
 
@@ -657,8 +660,6 @@
                     <div class="tags">
                         <span class="tag lo">Git</span>
                         <span class="tag lo">Agile / Scrum</span>
-                        <span class="tag lo">AccuRig</span>
-                        <span class="tag lo">Blender</span>
                         <span class="tag lo">Technical Docs</span>
                     </div>
                 </div>
@@ -677,38 +678,28 @@
                 <div class="tech-engine-label">Unreal Engine 5</div>
 
                 <div class="tech-item">
-                    <div class="tech-title">Custom FAnimInstanceProxy Pipeline — Dual Proxies, Zero AnimGraph VM</div>
-                    <div class="tech-desc">Two hand-written proxies evaluate directly into FCompactPose on the worker thread with no AnimBP overhead and no AnimGraph VM execution — every bone routed by index. The body proxy runs a four-priority Evaluate() chain and snapshots each frame into a TArray&lt;FTransform&gt; via CaptureSnapshot(); the face proxy independently handles blink alpha injection, gaze rotation, FAnimNode_ControlRig head IK, and FAnimNode_RigLogic blend shapes with live alpha blending. NativeUpdateAnimation() on the game thread fills a flat write surface — a struct of floats and indices — which the proxy reads in Evaluate(). No state crosses the thread boundary; no decision logic exists in animation code. The separation is enforced by architecture, not convention.</div>
+                    <div class="tech-title">C++ Animation Architecture — FAnimInstanceProxy, Zero AnimGraph VM</div>
+                    <div class="tech-desc">Hand-written FAnimInstanceProxy pipeline across all character types — Witch, Butcher, Bee, Dinosaur, GreyStone, GiantGuardian, Damsel, Soldier, Sparrow, and Sarah's MetaHuman face — each owning a typed proxy subclass evaluating directly into FCompactPose on the worker thread. Every bone routed by index; no AnimBP overhead, no AnimGraph VM execution. Three blend modes: Mode A for instant swap, Mode B for crossfade, Mode C for snapshot-from-current-pose via CaptureSnapshot() on all interrupts and transitions — no pose pop regardless of frame rate. Upper and lower body run as fully independent concurrent layers in the same evaluate call. Sarah's face proxy additionally injects blink alpha as named animation curves into FBlendedCurve each frame, consumed downstream by the MetaHuman face post-process ABP through ControlRig and RigLogic.</div>
                 </div>
 
                 <div class="tech-item">
-                    <div class="tech-title">Zero-Tick Behavioral Systems — Pure Event-Driven, Twelve FTimerHandles</div>
-                    <div class="tech-desc">Not one bCanEverTick enabled anywhere in the system. Every behavioral output — greeting, discomfort escalation, anger, flee-interception — fires from a scheduled C++ callback. The soldier brain alone manages twelve FTimerHandles; each soldier maintains a dedicated overlap sphere that re-evaluates flee-state every four seconds, intercepts regardless of player path, deducts 1% coin balance on contact, and escalates greeting locks (16-minute first offense, permanent second). Citizens operate as fully independent decision-makers — each tracks player behavior through its own event-driven state machine and decides autonomously to greet, escalate, walk away, or report. No coordinator. No shared authority.</div>
+                    <div class="tech-title">Zero-Tick Behavioral Systems — Pure Event-Driven, No Polling</div>
+                    <div class="tech-desc">Not one bCanEverTick enabled on any brain component across the full roster. Every behavioral output fires from a named C++ function call triggered by a scheduled FTimerHandle, an overlap callback, or an animation-completion event. Five enemy archetypes — a 14-state boss with a one-way revenge latch and live team HP injection, a 15-phase melee fighter with four personality archetypes, a flying minion with 13 FTimerHandle slots and orbital flight via TeleportPhysics, and two grounded minions with kinematic lunge derived from kinematic formulas. Three companion types share a unified follow FSM with world-space HoldGround anchors and a single round-robin command cursor. No coordinator. No shared authority. No polling.</div>
                 </div>
 
                 <div class="tech-item">
-                    <div class="tech-title">Full Emotional Escalation &amp; RDR2-Depth Look-At — No Manager Class, No Cuts</div>
-                    <div class="tech-desc">Citizens transition from neutral through discomfort to anger and confront via a ramping alpha sequence driven entirely by the face proxy, with RigLogic correcting blend shapes every frame throughout. Every transition originates from the actual current pose via CaptureSnapshot(), eliminating pops — no state jumps, no pose cuts, only continuously weighted blends. Head rotation clamped to PI/3.9f per personality and blended via FQuat::Slerp(); eyes tracked via smoothed vectors on FACIAL_L/R_Eye bones, clamped to EyeGazeClampAngleDegrees. HeadLookAtAlpha and FriendlyEyeGazeAlpha held independently by any subsystem and decay automatically via FInterpTo() the moment all holders release. No manager class. No polling.</div>
+                    <div class="tech-title">Citizen NPC Systems — Parallel State Machines, Per-Bone Eye Tracking</div>
+                    <div class="tech-desc">HumanElf citizens run two parallel independent state machines simultaneously: an interaction machine covering warn flow with indexed four-asset bundles (face animation, audio, body animation, write-body animation), and a HyperAwareness machine driving report and tax paths — each with super-matched index pairing so face animation and audio are always from the same emotionally coherent set across every phase boundary. Head rotation clamped per personality and smoothed via FQuat::Slerp(); eyes tracked per-bone with exponential-decay smoothing (1 − e^(−speed·Δt)) applied automatically the moment all holders release. Groom, body, face, and clothes LOD managed via scalability delegate — no per-frame polling.</div>
                 </div>
 
                 <div class="tech-item">
-                    <div class="tech-title">Enemy AI — Flat C++ State Machine, Four States, Fourteen Attack Sub-Phases</div>
-                    <div class="tech-desc">All decision logic lives in one flat C++ file with no blackboard and no decorator chains. Jump attacks fire from two independent triggers — a distance roll at engagement start and a looping timer during extended chases — using a manual parabolic arc via SetActorLocation() with animation scrubbed by distance fraction rather than time, so every jump length looks correct regardless of distance. Attack variants scale from 0% combo chance at slot 1 to 60% at slot 4, rising with consecutive hits; one team sighting fans out to the full group instantly. Below half HP the enemy breaks to a waypoint, plays a full heal animation across independent upper and lower body layers, restores HP on completion, then re-engages. Leader and member roles react to death differently; the last survivor carries stacked speed bonuses.</div>
-                </div>
-
-                <div class="tech-item">
-                    <div class="tech-title">Actor Pooling &amp; NPC Architecture — No Runtime Spawning, One Subclass Per Type</div>
-                    <div class="tech-desc">No actor spawns or destroys at runtime. Every enemy and NPC sits tick-disabled and hidden until the player enters the activation volume, teleports to a shuffled spawn point, activates, then resets and goes dormant on exit. Facial solves gated by proximity sphere: nearby MetaHumans receive full face proxy evaluation; distant NPCs fall back to body-only locomotion. NPC behavior built on a common base component — proximity reactions, greeting chains, comfort zone tracking, discomfort escalation, walk-away logic — with a UENUM-tagged category driving virtual dispatch per type. Each new NPC variant costs one .h, one .cpp, and one Data Asset fill. Zero duplication, zero runtime dispatch overhead.</div>
+                    <div class="tech-title">Actor Pooling &amp; Spatial Activation — No Runtime Spawning</div>
+                    <div class="tech-desc">No actor spawns or destroys at runtime. MonsterArea assigns spawn points via Fisher-Yates slot shuffling at activation; every enemy teleports to its point, activates, then resets and goes dormant on exit. Arrow projectiles across Sparrow, Bee, and GreyStone run off pre-built 20-slot UStaticMeshComponent pools constructed in the character constructor with SetUsingAbsoluteLocation(true) — no AActor spawn, no UProjectileMovementComponent, no physics component. Arrow flight runs at 30 Hz via repeating FTimerHandle with dual hit detection per tick: weak-pointer list scan and live sphere overlap query. Facial solves gated by proximity: nearby MetaHumans receive full face proxy evaluation; distant NPCs fall back to body-only locomotion.</div>
                 </div>
 
                 <div class="tech-item">
                     <div class="tech-title">Data Systems &amp; GC Contract — Single Source of Truth, Field-Level Enforcement</div>
-                    <div class="tech-desc">Every tunable parameter — blend speeds, comfort radius, anger thresholds, hospitality tiers, greeting pools, combat profiles, voice line arrays, AnimSequence sets — lives in a typed UPrimaryDataAsset following a Base → Soldier → Damsel hierarchy. Loaded once with LoadSynchronous() at BeginPlay; runtime reads flat cached copies — plain floats, raw UAnimSequence*, uint8 enums — with no BP node evaluation and no soft reference resolves. Every UObject* declared UPROPERTY() TObjectPtr&lt;&gt;; cross-actor references use TWeakObjectPtr&lt;&gt; with explicit .IsValid() guards before every dereference. All math scalar and named — FMath::FInterpTo(), FQuat::Slerp(), FTransform::Blend() called directly with results in named locals. No heap temporaries. No TArray allocations in hot paths.</div>
-                </div>
-
-                <div class="tech-item">
-                    <div class="tech-title">MetaHuman &amp; Motion Capture Integration</div>
-                    <div class="tech-desc">Built 10+ MetaHuman NPCs with custom facial and skeletal setups, proximity-gated facial solves, and wrap-based morph workflows for non-human character types. Integrated AI-driven motion capture — video-to-animation and face capture — alongside AI voice generation for dynamic NPC dialogue, replacing a traditional recording pipeline entirely.</div>
+                    <div class="tech-desc">Every tunable parameter — blend speeds, damage tables, anim sequence sets, detection radii, attack probability distributions, dialogue pools, patrol waypoints — lives in a typed UPrimaryDataAsset hierarchy loaded once via LoadSynchronous() at BeginPlay. Runtime reads flat cached copies — plain floats, raw UAnimSequence*, uint8 enums — with no BP node evaluation and no soft reference resolves on any hot path. Every owned UObject* declared UPROPERTY() TObjectPtr&lt;&gt;; every cross-actor reference uses TWeakObjectPtr&lt;&gt; with explicit IsValid() guards before every dereference. No heap temporaries. No TArray allocations in hot paths. Worker thread sees a flat, allocation-free evaluation path every frame.</div>
                 </div>
 
             </div>
@@ -718,28 +709,23 @@
                 <div class="tech-engine-label">Unity</div>
 
                 <div class="tech-item">
-                    <div class="tech-title">Hand-Written AI Systems — Behavior Trees, FSMs, and Utility AI from Scratch</div>
-                    <div class="tech-desc">All AI decision logic designed and implemented from scratch in C# without engine defaults — Behavior Trees, Finite State Machines, and Utility AI systems fully owned at the code level with no reliance on Unity's built-in AI tooling. Applied across strategy, simulation, and open-world environments sustaining large NPC counts on mobile hardware without frame degradation; each system architected for flat evaluation paths and minimal per-frame cost, built to operate within the strict compute budgets mobile targets impose. State transitions are discrete and auditable — no implicit graph traversal, no hidden per-frame evaluation.</div>
+                    <div class="tech-title">Hand-Written AI Systems — Behavior Trees, FSMs, Utility AI from Scratch</div>
+                    <div class="tech-desc">All AI decision logic designed and implemented from scratch in C# without engine defaults — Behavior Trees, Finite State Machines, and Utility AI systems fully owned at the code level. Applied across strategy, simulation, and open-world environments sustaining large NPC counts on mobile hardware without frame degradation. State transitions are discrete and auditable — no implicit graph traversal, no hidden per-frame evaluation — with flat evaluation paths built to operate within the strict compute budgets mobile targets impose.</div>
                 </div>
 
                 <div class="tech-item">
-                    <div class="tech-title">Data-Driven Scriptable Object Architecture — Single Source of Truth, Config Fully Decoupled</div>
-                    <div class="tech-desc">Full Scriptable Object pipelines serve as the single source of truth across all projects, with SO values injectable at runtime via JSON feeds from ASP.NET backends and external REST APIs — server data flows directly into game state without touching code or triggering rebuilds. Cross-game progression, save state, and live configuration changes all resolve through the same pipeline; the data layer and logic layer share no coupling, so tuning, balancing, and backend-driven updates require zero code intervention. The contract is explicit: Server → SO → game, with no intermediate code path changes and no runtime dependencies on the data source.</div>
+                    <div class="tech-title">Data-Driven Scriptable Object Architecture — Config Fully Decoupled</div>
+                    <div class="tech-desc">Full Scriptable Object pipelines serve as the single source of truth across all projects, with SO values injectable at runtime via JSON feeds from ASP.NET backends and external REST APIs — server data flows directly into game state without touching code or triggering rebuilds. Cross-game progression, save state, and live configuration changes all resolve through the same pipeline. The contract is explicit: Server → SO → game, with no intermediate code changes and no runtime dependencies on the data source.</div>
                 </div>
 
                 <div class="tech-item">
                     <div class="tech-title">Event-Driven Architecture — Near-Zero Update Loop</div>
-                    <div class="tech-desc">The Update loop is reserved strictly for animation, physics, and player input; every other system — state changes, NPC triggers, UI updates, progression tracking — responds to C# events and UnityEvent signals. No continuous polling, no redundant per-frame checks. This is an architectural constraint, not a guideline: systems are wired at bind time so event emission is the only path to state change, making per-frame cost proportional to actual activity rather than scene population.</div>
+                    <div class="tech-desc">The Update loop is reserved strictly for animation, physics, and player input; every other system — state changes, NPC triggers, UI updates, progression tracking — responds to C# events and UnityEvent signals. No continuous polling, no redundant per-frame checks. Systems are wired at bind time so event emission is the only path to state change, making per-frame cost proportional to actual activity rather than scene population.</div>
                 </div>
 
                 <div class="tech-item">
-                    <div class="tech-title">Character Pipeline &amp; AI-Assisted Content Generation</div>
-                    <div class="tech-desc">Used AccuRig and equivalent rigging tools to rapidly rig and prepare character assets for runtime, shortening character pipeline turnaround without sacrificing skeletal quality or animator control. Leveraged AI-assisted content generation for textures, materials, and asset variation to scale production output — generating controlled variation across NPC appearances, environment surfaces, and prop sets while retaining full artistic direction over the final result. The pipeline treats AI generation as a production accelerator with a manual review gate, not a replacement for artistic judgment.</div>
-                </div>
-
-                <div class="tech-item">
-                    <div class="tech-title">Performance Optimization — World Streaming, Object Pooling, LOD Chains &amp; DOTS</div>
-                    <div class="tech-desc">Built world streaming and object pooling systems for large open environments, combined with AI LOD techniques and pooled components to sustain stable frame rates and reduce GC pressure on mobile targets. Optimized 3D models directly within Unity — reducing polycounts, configuring LOD chains, and simplifying material complexity — to maintain intended visual quality within mobile performance budgets without relying on post-export fixes. Applied ECS, Job System, and Burst Compiler through project work for CPU-bound simulation workloads where single-threaded C# evaluation could not meet frame time targets.</div>
+                    <div class="tech-title">Performance — World Streaming, Object Pooling, LOD Chains &amp; DOTS</div>
+                    <div class="tech-desc">World streaming and object pooling systems for large open environments combined with AI LOD techniques and pooled components to sustain stable frame rates and reduce GC pressure on mobile. 3D models optimized directly in Unity — polycounts, LOD chains, material simplification — to hit mobile performance budgets without post-export fixes. ECS, Job System, and Burst Compiler applied for CPU-bound simulation workloads where single-threaded C# evaluation could not meet frame time targets.</div>
                 </div>
 
             </div>
