@@ -32,10 +32,8 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text2);font-family:var(--sans);font-size:14px;line-height:1.65;min-height:100vh;overflow-x:hidden}
 
-/* scanlines */
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.018) 2px,rgba(0,0,0,.018) 4px);pointer-events:none;z-index:999}
 
-/* red ambient glows */
 .g1,.g2,.g3{position:fixed;border-radius:50%;filter:blur(110px);pointer-events:none;z-index:0}
 .g1{width:600px;height:600px;background:radial-gradient(circle,rgba(180,0,40,.018) 0%,transparent 70%);top:-200px;right:-150px}
 .g2{width:500px;height:500px;background:radial-gradient(circle,rgba(140,0,30,.014) 0%,transparent 70%);bottom:15%;left:-120px}
@@ -116,7 +114,8 @@ header::after{content:'';position:absolute;bottom:42px;right:0;width:52px;height
 .lr:last-child{border:none}
 .ll{font-family:var(--mono);font-size:9.5px;color:var(--violet-l)}
 .sg{margin-bottom:13px}
-.sgl{font-family:var(--mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--violet);margin-bottom:6px}
+.sgl{font-family:var(--mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--violet);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.sgl .si{letter-spacing:0;font-size:11px;text-transform:none}
 .tags{display:flex;flex-wrap:wrap;gap:4px}
 .tag{font-family:var(--mono);font-size:9.5px;padding:2px 8px;border-radius:3px;border:1px solid;transition:all .14s;cursor:default}
 .tag:hover{transform:scale(1.06)}
@@ -246,18 +245,6 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
 
 <div class="job">
   <div class="job-top">
-    <div class="co">Axiosys Studios <span class="jb jb-c">Contract</span></div>
-    <div class="jdate">Jul 2025 – Dec 2025</div>
-  </div>
-  <div class="jrole">Unreal Engine Developer · Revenue Share</div>
-  <ul>
-    <li>Built core game state architecture in native C++ — player-driven state machine covering active gameplay, pause, menu, and blockage states; zero Blueprint logic in any runtime path.</li>
-    <li>Implemented anvil-based crafting and foundational gameplay mechanics in C++ with Blueprint integration strictly limited to designer-facing configuration inheriting from optimised C++ base classes.</li>
-  </ul>
-</div>
-
-<div class="job">
-  <div class="job-top">
     <div class="co">Emerald Space <span class="jb jb-i">Freelance Studio</span></div>
     <div class="jdate">Nov 2023 – Present</div>
   </div>
@@ -273,13 +260,13 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
 
 <div class="job">
   <div class="job-top">
-    <div class="co">VR University Club <span class="jb jb-v">Volunteer</span></div>
-    <div class="jdate">Oct 2024 – Nov 2025</div>
+    <div class="co">Axiosys Studios <span class="jb jb-v">Rev Share</span></div>
+    <div class="jdate">Jul 2025 – Dec 2025</div>
   </div>
-  <div class="jrole">Technical Instructor — Unity &amp; VR</div>
+  <div class="jrole">Unreal Engine Developer</div>
   <ul>
-    <li>Taught C# Unity systems to freshmen and junior students: object pooling, area chunks, event-driven architecture, NPC FSMs, behavior trees, VR controls.</li>
-    <li>Contributed to games across Unity, Godot, UE5, and VR systems.</li>
+    <li>Built core game state architecture in native C++ — player-driven state machine covering active gameplay, pause, menu, and blockage states; zero Blueprint logic in any runtime path.</li>
+    <li>Implemented anvil-based crafting and foundational gameplay mechanics in C++ with Blueprint integration strictly limited to designer-facing configuration inheriting from optimised C++ base classes.</li>
   </ul>
 </div>
 
@@ -348,7 +335,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
   <div class="sl">◈ Skills</div>
 
   <div class="sg">
-    <div class="sgl">Programming</div>
+    <div class="sgl"><span class="si">💻⚡</span> Programming</div>
     <div class="tags">
       <span class="tag r">C++</span><span class="tag r">C</span><span class="tag r">C#</span>
       <span class="tag v">x86 ASM</span>
@@ -357,7 +344,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
   </div>
 
   <div class="sg">
-    <div class="sgl">Engines</div>
+    <div class="sgl"><span class="si">🎮⚔️</span> Engines</div>
     <div class="tags">
       <span class="tag r">Unreal Engine 5</span><span class="tag r">Unity</span>
       <span class="tag m">ASP.NET</span><span class="tag m">.NET MAUI</span>
@@ -365,7 +352,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
   </div>
 
   <div class="sg">
-    <div class="sgl">Gameplay &amp; AI</div>
+    <div class="sgl"><span class="si">🧠👁️⚔️</span> Gameplay &amp; AI</div>
     <div class="tags">
       <span class="tag v">Behavior Trees</span><span class="tag v">FSM</span>
       <span class="tag v">GOAP</span><span class="tag v">Utility AI</span>
@@ -377,45 +364,64 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
   </div>
 
   <div class="sg">
-    <div class="sgl">Animation</div>
+    <div class="sgl"><span class="si">🎭🦾</span> Animation</div>
     <div class="tags">
       <span class="tag v">FAnimInstanceProxy</span>
       <span class="tag m">Mode A/B/C Blend</span>
       <span class="tag m">Snapshot Blending</span>
       <span class="tag m">Concurrent Layers</span>
       <span class="tag m">MetaHuman / RigLogic</span>
+      <span class="tag m">XOR Double-Buffer Proxy</span>
+      <span class="tag m">Async Pre-Bake Pool</span>
     </div>
   </div>
 
   <div class="sg">
-    <div class="sgl">Low-Level &amp; SIMD</div>
+    <div class="sgl"><span class="si">⚡🔩</span> Low-Level &amp; SIMD</div>
     <div class="tags">
       <span class="tag r">AVX2 4-Wide</span><span class="tag r">AVX-512 8-Wide</span>
       <span class="tag v">CPUID Dispatch</span>
       <span class="tag v">Cache-Line alignas(64)</span>
       <span class="tag v">SoA Sentinel Arrays</span>
+      <span class="tag m">CPU Downclocking Guard</span>
       <span class="tag m">Remez Minimax Polynomial</span>
       <span class="tag m">Optimization Floor Proof</span>
       <span class="tag m">Data-Oriented Design</span>
       <span class="tag m">Actor Pooling</span>
+      <span class="tag m">Zero-Tick Architecture</span>
     </div>
   </div>
 
   <div class="sg">
-    <div class="sgl">Architecture</div>
+    <div class="sgl"><span class="si">🏰🛡️🗡️</span> Architecture</div>
     <div class="tags">
+      <span class="tag m">Hot/Cold CL Struct Separation</span>
       <span class="tag m">UPrimaryDataAsset</span>
       <span class="tag m">TObjectPtr / TWeakObjectPtr</span>
+      <span class="tag m">UE5 Fence-Contract</span>
       <span class="tag m">AC-as-Brain</span>
       <span class="tag m">Proxy-as-Reader</span>
       <span class="tag m">Zero Heap Hot Paths</span>
-      <span class="tag m">UE5 Fence-Contract</span>
       <span class="tag m">Network Prediction</span>
     </div>
   </div>
 
   <div class="sg">
-    <div class="sgl">Tools</div>
+    <div class="sgl"><span class="si">❤️🌹</span> Combat &amp; Companion</div>
+    <div class="tags">
+      <span class="tag r">Revenge Latch</span>
+      <span class="tag r">HP Injection FSM</span>
+      <span class="tag v">Bézier Arc Approach</span>
+      <span class="tag v">Orbital TeleportPhysics</span>
+      <span class="tag m">Kinematic Lunge</span>
+      <span class="tag m">Fisher-Yates Spawn</span>
+      <span class="tag m">HoldGround Anchor</span>
+      <span class="tag m">Round-Robin Command</span>
+    </div>
+  </div>
+
+  <div class="sg">
+    <div class="sgl"><span class="si">🛠️</span> Tools</div>
     <div class="tags">
       <span class="tag m">Git</span><span class="tag m">Agile / Scrum</span><span class="tag m">Technical Docs</span>
     </div>
