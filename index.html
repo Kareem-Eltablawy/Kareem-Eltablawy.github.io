@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Kareem Eltablawy — Game Systems & Performance Engineer</title>
-<meta name="description" content="Game Systems & Performance Engineer — UE5 native C++, AVX2/512 SIMD, Cache-Line Architecture, Unity C#.">
+<title>Kareem Eltablawy — Unreal Engine & Unity Game Developer</title>
+<meta name="description" content="Software Engineer | Unreal Engine & Unity Game Developer — UE5 C++, Unity C#, gameplay, AI, animation and performance.">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -186,8 +186,8 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
   </svg>
   <div>
     <div class="name">Kareem Eltablawy<span class="cursor"></span> <span style="font-size:clamp(16px,2.5vw,26px);-webkit-text-fill-color:initial;opacity:.6">🌹</span></div>
-    <div class="role">⚔ Game Systems &amp; Performance Engineer</div>
-    <div class="stack">UE5 &nbsp;·&nbsp; SIMD &nbsp;·&nbsp; C/C++ &nbsp;·&nbsp; Unity C#</div>
+    <div class="role">⚔ Software Engineer &nbsp;·&nbsp; Unreal Engine &amp; Unity Game Developer</div>
+    <div class="stack">UE5 C++ &nbsp;·&nbsp; Unity C# &nbsp;·&nbsp; Gameplay &amp; AI &nbsp;·&nbsp; Animation</div>
   </div>
 </div>
 <span style="position:absolute;top:8px;right:64px;font-size:18px;opacity:.18;pointer-events:none;filter:blur(.5px)">🌹</span>
@@ -202,11 +202,10 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
 
 <!-- STATS -->
 <div class="stats">
-  <div class="stat"><span class="stat-n" data-t="11">0</span><span class="stat-l">Games Shipped</span></div>
-  <div class="stat"><span class="stat-n" data-t="10">0</span><span class="stat-l">Character Types</span></div>
-  <div class="stat"><span class="stat-n">0</span><span class="stat-l">Blueprint VMs</span></div>
-  <div class="stat"><span class="stat-n">AVX-512</span><span class="stat-l">Bone Pipeline</span></div>
+  <div class="stat"><span class="stat-n" data-t="11">0</span><span class="stat-l">Games Released</span></div>
   <div class="stat"><span class="stat-n" data-t="13">0</span><span class="stat-l">Prototypes</span></div>
+  <div class="stat"><span class="stat-n" data-t="3">0</span><span class="stat-l">Studios</span></div>
+  <div class="stat"><span class="stat-n" data-t="2">0</span><span class="stat-l">Engines</span></div>
 </div>
 
 <!-- MAIN LAYOUT -->
@@ -215,9 +214,9 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
 
 <!-- PROFILE -->
 <section class="section">
-<div class="sl"><span class="ic">◈</span> Profile</div>
+<div class="sl"><span class="ic">◈</span> Professional Summary</div>
 <p class="summary">
-  Game Systems &amp; Performance engineer building production-grade NPC, combat, and animation systems in native UE5 C++ — zero Blueprint VM runtime paths, no tick overhead. I work from the register up: hot structs fit one cache line with <span class="cd">static_assert</span> byte-offset enforcement, hot-path logic runs as pure C file-scope functions, every optimization closes with a mathematical floor proof. Animation evaluates directly into <span class="cd">FCompactPose</span> via hand-written AVX2 4-wide / AVX-512 8-wide bone blend dispatched at runtime by CPUID — no AnimGraph VM anywhere. AI brains are packed <span class="cd">uint32</span> FSMs driven entirely by overlap callbacks and float-countdown timers. Zero Blueprint VM, zero ticks, zero heap on hot paths.
+  Software engineer and game developer who builds games in Unreal Engine 5 (C++) and Unity (C#). As founder of Strawberries, I lead the technical side of my own game, Project Moon, covering gameplay, AI, animation, performance, tools and the asset pipeline. I like systems that run smoothly on real hardware and that designers can tune without touching code. I’m looking for a mid-level game development role.
 </p>
 </section>
 
@@ -230,16 +229,11 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
     <div class="co">Strawberries <span class="jb jb-f">Founder</span></div>
     <div class="jdate">Aug 2025 – Present</div>
   </div>
-  <div class="jrole">Unreal Engine Lead Engineer</div>
+  <div class="jrole">Unreal Engine Developer</div>
   <ul>
-    <li>Shipped Summer 2026 MVP — five enemy archetypes, three companion types, MetaHuman player. <span class="hl">Native C++ throughout</span>: zero Blueprint runtime paths, zero ticks, zero runtime asset access on any hot path.</li>
-    <li>Authored hand-written <span class="cd">FAnimInstanceProxy</span> pipeline across ten character types evaluating directly into <span class="cd">FCompactPose</span> on the worker thread — three blend modes, fully independent concurrent upper/lower body layers, <span class="hl">no AnimGraph VM anywhere</span>.</li>
-    <li>Replaced all per-bone blending with <span class="hl">AVX2 4-wide / AVX-512 8-wide</span> pipeline, CPUID-dispatched at startup with Intel CPU downclocking detection; <span class="cd">FTransform</span> layout locked by <span class="cd">static_assert</span> byte-offset guards across all ten character types.</li>
-    <li>Built packed <span class="cd">uint32</span> MegaState companion AI (GreyStone) — two <span class="cd">alignas(64)</span> hot structs, all FSM fields extractable in two x64 instructions via SHR/AND. Remez degree-3 minimax <span class="cd">atan2</span> replacing <span class="cd">FMath::Atan2</span>: <span class="hl">12 instructions vs 25–40</span>, verified 0.2 µs/frame savings at 50 actors.</li>
-    <li>Async pre-bake animation pipeline with shared pool, per-proxy cancel token, proactive warm kicks, and XOR double-buffer proxy safe under the UE5 pre-Evaluate fence contract.</li>
-    <li>Zero-tick enemy brains driven entirely by <span class="cd">FTimerHandle</span> one-shots, overlap callbacks, and animation-completion events — boss with revenge latch and live team HP injection, melee fighter with four personality archetypes and quadratic Bézier arc approach, flying minion with orbital flight via <span class="cd">TeleportPhysics</span>. No coordinator class, no shared authority.</li>
-    <li>Citizen NPCs: parallel interaction and HyperAwareness FSMs, per-bone eye tracking with exponential-decay smoothing <span class="cd">(1 − e^(−speed·Δt))</span>, super-matched face/audio index pairing, scalability-delegate LOD — no per-frame polling.</li>
-    <li>Optimization floor proof methodology throughout: every gap documents <span class="hl">instruction count × cycle math × µs/frame</span> at actor count, permanently closed when a system cannot be further improved.</li>
+    <li>Founded and run my own game studio, and lead development of Project Moon, an open-world fantasy action game that has reached a <span class="hl">playable MVP</span> with multiple enemy types, companions and a MetaHuman player character.</li>
+    <li>Own the technical side end to end: architecture, gameplay, AI, animation, optimization and tooling, with core systems in <span class="hl">native C++</span> and Blueprints used only for designer-facing configuration.</li>
+    <li>Run the content pipeline: AI-generated models cleaned up and optimized in Blender, then integrated into UE5, plus basic cinematics.</li>
   </ul>
 </div>
 
@@ -250,23 +244,21 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
   </div>
   <div class="jrole">Unity Developer</div>
   <ul>
-    <li>All AI decision logic from scratch in C# — Behavior Trees, FSMs, Utility AI, GOAP — sustaining large NPC counts on mobile without frame degradation. No engine defaults; every system fully owned at the code level.</li>
-    <li>Full Scriptable Object pipelines as single source of truth with live runtime injection from ASP.NET backends via REST APIs and JSON. Contract is explicit: <span class="hl">Server → SO → game</span>. No rebuild required for data changes.</li>
-    <li>Near-zero update architecture across every project: Update loop reserved strictly for animation, physics, and player input; all other systems respond to C# events and UnityEvent signals. No continuous polling anywhere.</li>
-    <li>World streaming, object pooling, AI LOD, and ECS / Job System / Burst Compiler for CPU-bound simulation workloads on mobile.</li>
-    <li>Delivered <span class="hl">11 playable games</span> and <span class="hl">13 technical prototypes</span> across PC and mobile.</li>
+    <li>Built AI systems from scratch in C# (behavior trees, utility AI, FSMs) for strategy, simulation and open-world projects.</li>
+    <li>Built data pipelines that let server data update game content without code changes or rebuilds, plus world streaming and object pooling for open environments and mobile performance.</li>
+    <li>Released <span class="hl">11 playable games</span> and <span class="hl">13 prototypes</span> on PC and mobile, optimizing and integrating AI-generated models in Unity and setting up basic cinematics.</li>
   </ul>
 </div>
 
 <div class="job">
   <div class="job-top">
-    <div class="co">Axiosys Studios <span class="jb jb-v">Rev Share</span></div>
+    <div class="co">Axiosys Studios <span class="jb jb-v">Shared Revenue</span></div>
     <div class="jdate">Jul 2025 – Dec 2025</div>
   </div>
   <div class="jrole">Unreal Engine Developer</div>
   <ul>
-    <li>Built core game state architecture in native C++ — player-driven state machine covering active gameplay, pause, menu, and blockage states; zero Blueprint logic in any runtime path.</li>
-    <li>Implemented anvil-based crafting and foundational gameplay mechanics in C++ with Blueprint integration strictly limited to designer-facing configuration inheriting from optimised C++ base classes.</li>
+    <li>Built the core game-state system in C++ (gameplay, pause, menu and blocked states).</li>
+    <li>Implemented crafting and foundational gameplay mechanics, with Blueprint kept to designer configuration.</li>
   </ul>
 </div>
 
@@ -279,36 +271,43 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
 <div class="proj">
   <div class="pnum">I — SunShine</div>
   <div class="ptitle">SunShine <span class="pbadge">· A+ Graduation Award</span></div>
-  <div class="pdesc">Graduation capstone: four independently scoped indie games and a full-stack game store website, each with production-quality architecture — object pooling, event-driven NPC systems, data-driven parameters. Received A+ grade and university certificate awards.</div>
-  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">ASP.NET</span><span class="ptag">Full Stack</span><span class="ptag">Event-Driven NPC</span><span class="ptag">Object Pooling</span></div>
+  <div class="pdesc">Graduation project of four indie games and a game store website, graded A+ and recognized with certificate awards.</div>
+  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">ASP.NET</span><span class="ptag">Indie Games</span><span class="ptag">Store Website</span></div>
 </div>
 
 <div class="proj">
   <div class="pnum">II — Red Dunes</div>
   <div class="ptitle">Red Dunes</div>
-  <div class="pdesc">Market Management Simulation on a single scalable FSM architecture. High-performance crowd and NPC system sustaining large character counts on mobile — all decision logic in C# with no engine AI defaults, no per-frame polling.</div>
-  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">FSM</span><span class="ptag">Crowd Simulation</span><span class="ptag">Mobile</span><span class="ptag">Event-Driven</span></div>
+  <div class="pdesc">Market-management simulation built on a single scalable FSM, with crowd and NPC systems.</div>
+  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">FSM</span><span class="ptag">Crowd &amp; NPC Systems</span></div>
 </div>
 
 <div class="proj">
   <div class="pnum">III — Gather The Plants</div>
   <div class="ptitle">Gather The Plants</div>
-  <div class="pdesc">Performance-critical mobile runner. Pooled NPC system with AI LOD and event-driven state management to hold frame rates stable on low-end Android without sacrificing behavioral fidelity at close range.</div>
-  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">AI LOD</span><span class="ptag">Object Pooling</span><span class="ptag">Mobile Optimization</span></div>
+  <div class="pdesc">Casual mobile runner with coins, sound effects and a settings menu.</div>
+  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">Mobile</span><span class="ptag">Casual Runner</span></div>
 </div>
 
 <div class="proj">
   <div class="pnum">IV — Floral Essence</div>
   <div class="ptitle">Floral Essence</div>
-  <div class="pdesc">Open-world title with sensory-driven enemy AI and allied NPC combat systems across a large map. Distance-based AI and animation scaling — full behavioral fidelity at range, lightweight evaluation at distance.</div>
-  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">Sensory AI</span><span class="ptag">Open World</span><span class="ptag">Combat Systems</span><span class="ptag">Animation Scaling</span></div>
+  <div class="pdesc">Sensory-driven enemy AI and allied NPC combat, with distance-based AI and animation scaling.</div>
+  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">Sensory AI</span><span class="ptag">NPC Combat</span><span class="ptag">AI &amp; Animation LOD</span></div>
 </div>
 
 <div class="proj">
   <div class="pnum">V — In Development</div>
-  <div class="ptitle">Project Moon <span class="pbadge">· MVP Summer 2026</span></div>
-  <div class="pdesc">Open-world RPG set in a Crusade-era world with fantasy elements. Full C++ for all core systems; Blueprints limited to designer-facing configuration inheriting from optimised C++ base classes. All behaviour, combat, and quest parameters driven by typed Data Assets cached at BeginPlay — never read at runtime. Content scales through subclassing and editor fill.</div>
-  <div class="ptags"><span class="ptag">UE5 C++</span><span class="ptag">Open World RPG</span><span class="ptag">Data Assets</span><span class="ptag">Zero-Tick</span><span class="ptag">AVX-512</span><span class="ptag">MetaHuman</span><span class="ptag">Actor Pooling</span></div>
+  <div class="ptitle">Project Moon <span class="pbadge">· Playable MVP</span></div>
+  <div class="pdesc">An open-world fantasy action game in Unreal Engine 5, with multiple enemy types, companions and a MetaHuman player character. Enemy, companion and NPC AI is written entirely in C++ without Behavior Trees, alongside custom C++ animation systems. It also has a day/night cycle with NPC daily routines, a player-led companion team, and Data Assets that designers can tune without touching code.</div>
+  <div class="ptags"><span class="ptag">UE5 C++</span><span class="ptag">Open World</span><span class="ptag">Data Assets</span><span class="ptag">Zero-Tick</span><span class="ptag">MetaHuman</span></div>
+</div>
+
+<div class="proj">
+  <div class="pnum">VI — Studio</div>
+  <div class="ptitle">Strawberries <span class="pbadge">· Founded Aug 2025</span></div>
+  <div class="pdesc">My own game studio, where I own the technical side end to end, from architecture and gameplay to AI, animation, optimization and tooling, and run the asset pipeline behind Project Moon.</div>
+  <div class="ptags"><span class="ptag">Unreal Engine 5</span><span class="ptag">Native C++</span><span class="ptag">Blender Pipeline</span><span class="ptag">Tooling</span></div>
 </div>
 
 </section>
@@ -326,104 +325,93 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
 
 <section class="section">
   <div class="sl">◈ Languages</div>
-  <div class="lr"><span>Arabic</span><span class="ll">Native</span></div>
-  <div class="lr"><span>English</span><span class="ll">Advanced</span></div>
-  <div class="lr"><span>French</span><span class="ll">Intermediate</span></div>
+  <div class="lr"><span>Arabic</span><span class="ll">Native · C2</span></div>
+  <div class="lr"><span>English</span><span class="ll">Advanced · C1</span></div>
+  <div class="lr"><span>French</span><span class="ll">Elementary · A2</span></div>
 </section>
 
 <section class="section">
   <div class="sl">◈ Skills</div>
 
   <div class="sg">
-    <div class="sgl"><span class="si">💻⚡</span> Programming</div>
+    <div class="sgl"><span class="si">💻⚡</span> Programming Languages</div>
     <div class="tags">
-      <span class="tag r">C++</span><span class="tag r">C</span><span class="tag r">C#</span>
-      <span class="tag v">x86 ASM</span>
+      <span class="tag r">C</span><span class="tag r">C++</span><span class="tag r">C#</span>
       <span class="tag m">Python</span><span class="tag m">Java</span><span class="tag m">SQL</span>
     </div>
   </div>
 
   <div class="sg">
-    <div class="sgl"><span class="si">🎮⚔️</span> Engines</div>
+    <div class="sgl"><span class="si">🎮⚔️</span> Engines &amp; Frameworks</div>
     <div class="tags">
       <span class="tag r">Unreal Engine 5</span><span class="tag r">Unity</span>
-      <span class="tag m">ASP.NET</span><span class="tag m">.NET MAUI</span>
+      <span class="tag m">.NET</span><span class="tag m">ASP.NET</span><span class="tag m">MAUI</span>
     </div>
   </div>
 
   <div class="sg">
     <div class="sgl"><span class="si">🧠👁️⚔️</span> Gameplay &amp; AI</div>
     <div class="tags">
-      <span class="tag v">Behavior Trees</span><span class="tag v">FSM</span>
+      <span class="tag v">Behavior Trees</span><span class="tag v">Finite State Machines</span>
       <span class="tag v">GOAP</span><span class="tag v">Utility AI</span>
       <span class="tag m">Event-Driven Systems</span>
-      <span class="tag m">Data-Driven NPC</span>
-      <span class="tag m">Zero-Tick Brain</span>
-      <span class="tag m">Packed uint32 MegaState</span>
+      <span class="tag m">Data-Driven NPC Pipelines</span>
+      <span class="tag m">Parallel State Machines</span>
+      <span class="tag m">Zero-Tick Brain Architecture</span>
     </div>
   </div>
 
   <div class="sg">
-    <div class="sgl"><span class="si">🎭🦾</span> Animation</div>
+    <div class="sgl"><span class="si">🎭🦾</span> Animation Systems</div>
     <div class="tags">
       <span class="tag v">FAnimInstanceProxy</span>
-      <span class="tag m">Mode A/B/C Blend</span>
+      <span class="tag m">Mode A/B/C Blend Architecture</span>
       <span class="tag m">Snapshot Blending</span>
-      <span class="tag m">Concurrent Layers</span>
-      <span class="tag m">MetaHuman / RigLogic</span>
-      <span class="tag m">XOR Double-Buffer Proxy</span>
-      <span class="tag m">Async Pre-Bake Pool</span>
+      <span class="tag m">Motion Matching (GASP C++)</span>
+      <span class="tag m">Upper/Lower Body Concurrent Layers</span>
+      <span class="tag m">MetaHuman Face Pipeline</span>
+      <span class="tag m">ControlRig</span>
+      <span class="tag m">RigLogic</span>
+      <span class="tag m">Face Control Board</span>
+      <span class="tag m">Proxy Anim Instances</span>
+      <span class="tag m">Animation Sequencer</span>
     </div>
   </div>
 
   <div class="sg">
-    <div class="sgl"><span class="si">⚡🔩</span> Low-Level &amp; SIMD</div>
+    <div class="sgl"><span class="si">⚡🔩</span> Performance &amp; Systems</div>
     <div class="tags">
-      <span class="tag r">AVX2 4-Wide</span><span class="tag r">AVX-512 8-Wide</span>
-      <span class="tag v">CPUID Dispatch</span>
-      <span class="tag v">Cache-Line alignas(64)</span>
-      <span class="tag v">SoA Sentinel Arrays</span>
-      <span class="tag m">CPU Downclocking Guard</span>
-      <span class="tag m">Remez Minimax Polynomial</span>
-      <span class="tag m">Optimization Floor Proof</span>
-      <span class="tag m">Data-Oriented Design</span>
-      <span class="tag m">Actor Pooling</span>
+      <span class="tag v">Actor Pooling</span>
+      <span class="tag m">Overlap-Based Activation Volumes</span>
       <span class="tag m">Zero-Tick Architecture</span>
+      <span class="tag m">Timer-Driven Projectile Pools</span>
+      <span class="tag m">Multithreading</span>
+      <span class="tag m">Memory Pooling</span>
+      <span class="tag m">Asset Streaming</span>
+      <span class="tag m">Data-Oriented Design</span>
+      <span class="tag m">Curve-Driven Character Movement</span>
     </div>
   </div>
 
   <div class="sg">
     <div class="sgl"><span class="si">🏰🛡️🗡️</span> Architecture</div>
     <div class="tags">
-      <span class="tag m">Hot/Cold CL Struct Separation</span>
-      <span class="tag m">UPrimaryDataAsset</span>
-      <span class="tag m">TObjectPtr / TWeakObjectPtr</span>
-      <span class="tag m">UE5 Fence-Contract</span>
-      <span class="tag m">AC-as-Brain</span>
-      <span class="tag m">Proxy-as-Reader</span>
-      <span class="tag m">Zero Heap Hot Paths</span>
-      <span class="tag m">Network Prediction</span>
-    </div>
-  </div>
-
-  <div class="sg">
-    <div class="sgl"><span class="si">❤️🌹</span> Combat &amp; Companion</div>
-    <div class="tags">
-      <span class="tag r">Revenge Latch</span>
-      <span class="tag r">HP Injection FSM</span>
-      <span class="tag v">Bézier Arc Approach</span>
-      <span class="tag v">Orbital TeleportPhysics</span>
-      <span class="tag m">Kinematic Lunge</span>
-      <span class="tag m">Fisher-Yates Spawn</span>
-      <span class="tag m">HoldGround Anchor</span>
-      <span class="tag m">Round-Robin Command</span>
+      <span class="tag v">UPrimaryDataAsset Hierarchies</span>
+      <span class="tag m">OOP &amp; Design Patterns</span>
+      <span class="tag m">UPROPERTY GC Contracts</span>
+      <span class="tag m">TObjectPtr Ownership</span>
+      <span class="tag m">TWeakObjectPtr Cross-Actor Safety</span>
+      <span class="tag m">AC-as-Brain / Proxy-as-Reader</span>
+      <span class="tag m">Inheritance-Driven NPC Scalability</span>
+      <span class="tag m">Zero Heap Allocation Hot Paths</span>
+      <span class="tag m">Network Prediction (FSavedMove_Character)</span>
     </div>
   </div>
 
   <div class="sg">
     <div class="sgl"><span class="si">🛠️</span> Tools</div>
     <div class="tags">
-      <span class="tag m">Git</span><span class="tag m">Agile / Scrum</span><span class="tag m">Technical Docs</span>
+      <span class="tag m">Git</span><span class="tag m">Agile / Scrum</span><span class="tag m">Technical Documentation</span>
     </div>
   </div>
 
@@ -444,38 +432,33 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
   <div class="tengine">⚔ Unreal Engine 5 — Native C++ Systems</div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Animation Architecture — FAnimInstanceProxy, Zero AnimGraph VM</div>
-    <div class="tdesc">Hand-written <span class="cd">FAnimInstanceProxy</span> pipeline across ten character types — Witch, Butcher, Bee, Dinosaur, GreyStone, GiantGuardian, Damsel, Soldier, Sparrow, and Sarah's MetaHuman face — each owning a typed proxy subclass evaluating directly into <span class="cd">FCompactPose</span> on the worker thread. Every bone routed by index; no AnimBP overhead, no AnimGraph VM execution. Three blend modes: Mode A for instant swap, Mode B for crossfade, Mode C for snapshot-from-current-pose via <span class="cd">CaptureSnapshot()</span> on all interrupts and death — no pose pop regardless of frame. Upper and lower body run as fully independent concurrent layers in the same evaluate call. Sarah's face proxy injects blink alpha as named animation curves into <span class="cd">FBlendedCurve</span>, consumed by the MetaHuman post-process ABP through ControlRig and RigLogic.</div>
+    <div class="ttitle"><span class="s">▸</span>AI &amp; Combat — Event-Driven C++, No Behavior Trees</div>
+    <div class="tdesc">Enemy, companion and NPC AI is written entirely in C++, without Behavior Trees. Each brain follows a <span class="cd">zero-tick</span> design, so it reacts to events such as overlaps, timers and animation completions instead of checking the world every frame. That covers attacks, dodging, defending and hit reactions, and because NPC types are built through inheritance, a new enemy or companion extends an existing base instead of starting from scratch.</div>
   </div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>AVX2 / AVX-512 Bone Blend — SIMD, Cache-Line &amp; Floor Proofs</div>
-    <div class="tdesc">Replaced all per-bone blending with a hand-written AVX2 4-wide / AVX-512 8-wide pipeline. CPUID runtime dispatch selects the wide path at startup; Intel CPU downclocking detection guards against frequency-scaled degradation. <span class="cd">FTransform</span> layout locked by <span class="cd">static_assert</span> byte-offset guards. Remez degree-3 minimax polynomial replaces <span class="cd">FMath::Atan2</span>: <span class="cd">12 instructions vs 25–40</span>, verified 0.2 µs/frame savings at 50 actors. Hot structs fit one cache line with <span class="cd">alignas(64)</span> and verified byte offsets. SoA Sentinel Arrays with <span class="cd">FLT_MAX</span> sentinels for branchless early-exit. Every optimization gap documents instruction count × cycle math × µs/frame at actor count — permanently closed when nothing can be removed.</div>
+    <div class="ttitle"><span class="s">▸</span>Animation — Custom C++ with Smooth Interrupts</div>
+    <div class="tdesc">Characters run on custom C++ animation systems built around <span class="cd">FAnimInstanceProxy</span>, with upper and lower body working as concurrent layers. Transitions use snapshot blending, so when a hit reaction or other interrupt lands, the character blends out of the pose it is actually in and nothing pops. The system stays stable with many characters on screen, and faces run through the MetaHuman pipeline with ControlRig and RigLogic.</div>
   </div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Packed uint32 MegaState — Register-Level AI</div>
-    <div class="tdesc">Companion AI (GreyStone) built as packed <span class="cd">uint32</span> MegaState with two <span class="cd">alignas(64)</span> hot structs — all FSM fields extractable in exactly two x64 instructions via SHR/AND register extraction. State transitions are pure C file-scope functions: no virtual dispatch, no heap allocation, no dynamic branching. Zero Blueprint VM on any state path. Every decision reads from flat cached data with no soft reference resolves.</div>
+    <div class="ttitle"><span class="s">▸</span>Living World — Day/Night Cycle &amp; NPC Routines</div>
+    <div class="tdesc">The world has a day/night cycle, and NPCs follow daily routines of sleeping, eating and idling that are driven by in-game time. This lets the same NPCs feel different at different hours without scripting each scene by hand, and the schedules are tuned through data instead of code.</div>
   </div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Zero-Tick Behavioral Systems — Pure Event-Driven</div>
-    <div class="tdesc">Not one <span class="cd">bCanEverTick</span> enabled on any brain component. All behavioral output fires from named C++ functions triggered by <span class="cd">FTimerHandle</span> one-shots, overlap callbacks, or animation-completion events. Five archetypes: 14-state boss with revenge latch and live team HP injection; 15-phase melee fighter with four personality archetypes and quadratic Bézier arc approach interrupted mid-arc; flying minion with 13 timer slots and orbital flight via <span class="cd">TeleportPhysics</span>; two grounded minions with kinematic lunge. Three companions on a unified follow FSM with world-space HoldGround anchors, single round-robin command cursor. No coordinator. No shared authority. No polling.</div>
+    <div class="ttitle"><span class="s">▸</span>Companions — Player-Led Team</div>
+    <div class="tdesc">The player leads a companion team and gives it commands, with limits on roster size so the team stays readable and manageable in combat. Companions use the same event-driven C++ approach as enemies, so they stay cheap to run even when several of them are active alongside the player.</div>
   </div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Citizen NPC Systems — Parallel FSMs &amp; Per-Bone Eye Tracking</div>
-    <div class="tdesc">HumanElf citizens run two parallel independent state machines: an interaction machine covering warn flow with indexed four-asset bundles (face animation, audio, body animation, write-body animation), and a HyperAwareness machine driving report and tax paths — super-matched index pairing so face and audio are always emotionally coherent across every phase boundary. Head rotation clamped per personality and smoothed via <span class="cd">FQuat::Slerp()</span>; eyes tracked per-bone with exponential-decay smoothing <span class="cd">(1 − e^(−speed·Δt))</span> applied the moment all holders release. Groom, body, face, and clothes LOD via scalability delegate — no per-frame polling.</div>
+    <div class="ttitle"><span class="s">▸</span>Data-Driven Design — Tuned in Data Assets</div>
+    <div class="tdesc">Designers tune values in Data Assets without changing code, using a <span class="cd">UPrimaryDataAsset</span> hierarchy for the project's settings. Blueprints are kept to designer-facing configuration while the core systems stay in native C++. Ownership is explicit as well, with <span class="cd">TObjectPtr</span> for owned objects and <span class="cd">TWeakObjectPtr</span> across actors, which keeps garbage collection predictable.</div>
   </div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Actor Pooling &amp; Spatial Activation — Zero Runtime Spawning</div>
-    <div class="tdesc">No actor spawns or destroys at runtime. <span class="cd">MonsterArea</span> assigns spawn points via Fisher-Yates slot shuffling; enemies teleport to their point, activate, then reset and go dormant on exit. Arrow projectiles run off pre-built 20-slot <span class="cd">UStaticMeshComponent</span> pools constructed in the character constructor with <span class="cd">SetUsingAbsoluteLocation(true)</span> — no <span class="cd">AActor</span> spawn, no <span class="cd">UProjectileMovementComponent</span>, no physics component. Arrow flight at 30 Hz via repeating <span class="cd">FTimerHandle</span> with dual hit detection per tick: weak-pointer list scan and live sphere overlap query. Facial solves gated by proximity.</div>
-  </div>
-
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Data Systems &amp; GC Contract — Field-Level Enforcement</div>
-    <div class="tdesc">Every tunable parameter — blend speeds, damage tables, anim sequence sets, detection radii, attack probability distributions, patrol waypoints — lives in a typed <span class="cd">UPrimaryDataAsset</span> hierarchy loaded once via <span class="cd">LoadSynchronous()</span> at BeginPlay. Runtime reads flat cached copies — plain floats, raw <span class="cd">UAnimSequence*</span>, <span class="cd">uint8</span> enums — no BP node evaluation, no soft reference resolves. Every owned <span class="cd">UObject*</span> declared <span class="cd">UPROPERTY() TObjectPtr&lt;&gt;</span>; every cross-actor reference uses <span class="cd">TWeakObjectPtr&lt;&gt;</span> with explicit <span class="cd">IsValid()</span> guards before every dereference. Worker thread sees a flat, allocation-free evaluation path every frame.</div>
+    <div class="ttitle"><span class="s">▸</span>Performance — Event-Driven, LOD &amp; Compact Data</div>
+    <div class="tdesc">Logic is event-driven rather than ticked, and AI and animation both use distance-based LOD, so characters far from the player are cheap to run. Hot paths use compact data layouts and avoid heap allocation, while actor pooling, overlap-based activation volumes and timer-driven projectile pools keep spawning and activation costs down.</div>
   </div>
 
 </div>
@@ -485,23 +468,23 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
   <div class="tengine">◈ Unity — C# Systems Architecture</div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Hand-Written AI Systems — BTs, FSMs, Utility AI from Scratch</div>
-    <div class="tdesc">All AI decision logic designed and implemented from scratch in C# — Behavior Trees, Finite State Machines, and Utility AI systems fully owned at the code level. No engine defaults, no third-party frameworks. Applied across strategy, simulation, and open-world environments sustaining large NPC counts on mobile without frame degradation. State transitions are discrete and auditable — no implicit graph traversal, no hidden per-frame evaluation — with flat evaluation paths built for strict mobile compute budgets.</div>
+    <div class="ttitle"><span class="s">▸</span>AI Written from Scratch in C#</div>
+    <div class="tdesc">Behavior trees, FSMs and utility AI are all written from scratch in C#, which I have used across strategy, simulation and open-world projects. Owning the AI code means decisions are easy to trace and tune, and each system can be built to fit the performance budget of the project instead of adapting to a framework.</div>
   </div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Data-Driven Scriptable Object Architecture</div>
-    <div class="tdesc">Full Scriptable Object pipelines serve as the single source of truth across all projects. SO values injectable at runtime via JSON feeds from ASP.NET backends and external REST APIs — server data flows directly into game state without touching code or triggering rebuilds. Cross-game progression, save state, and live configuration all resolve through the same pipeline. Contract is explicit: Server → SO → game. No intermediate code changes, no runtime dependencies on the data source.</div>
+    <div class="ttitle"><span class="s">▸</span>Data-Driven Design — ScriptableObjects &amp; Backends</div>
+    <div class="tdesc">ScriptableObjects are the source of truth for game data, fed by JSON from ASP.NET and REST backends. The result is that server data can update game content without code changes or rebuilds, so values can change quickly without waiting for a new build.</div>
   </div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Event-Driven Architecture — Near-Zero Update Loop</div>
-    <div class="tdesc">Update loop reserved strictly for animation, physics, and player input — every other system responds to C# events and UnityEvent signals. No continuous polling, no redundant per-frame checks. Systems are wired at bind time so event emission is the only path to state change, making per-frame cost proportional to actual activity rather than scene population. An architectural constraint, not a guideline.</div>
+    <div class="ttitle"><span class="s">▸</span>Event-Driven — Update Only Where It Counts</div>
+    <div class="tdesc">Update is used only for animation, physics and input, and everything else runs on events. Systems do work when something actually happens, which keeps per-frame cost low and makes behavior easier to follow because each change has a clear trigger.</div>
   </div>
 
   <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Performance — DOTS, World Streaming, LOD Chains &amp; Pooling</div>
-    <div class="tdesc">World streaming and object pooling for large open environments combined with AI LOD and pooled components to sustain stable frame rates and reduce GC pressure on mobile. 3D models optimised directly in Unity — polycounts, LOD chains, material simplification — to hit mobile performance budgets without post-export fixes. ECS, Job System, and Burst Compiler applied for CPU-bound simulation workloads where single-threaded C# evaluation could not meet frame time targets.</div>
+    <div class="ttitle"><span class="s">▸</span>Performance — Streaming, Pooling, LOD &amp; ECS</div>
+    <div class="tdesc">World streaming, object pooling and AI LOD keep open environments and mobile builds running smoothly. For CPU-heavy simulation I use ECS, the Job System and Burst, so large amounts of work can be spread across cores instead of sitting on the main thread.</div>
   </div>
 
 </div>
@@ -509,7 +492,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
 
 <!-- FOOTER -->
 <footer>
-  <div class="fsig">Kareem Eltablawy &nbsp;·&nbsp; Game Systems &amp; Performance Engineer &nbsp;·&nbsp; 2026</div>
+  <div class="fsig">Kareem Eltablawy &nbsp;·&nbsp; Software Engineer | Unreal Engine &amp; Unity Game Developer &nbsp;·&nbsp; 2026</div>
   <div class="fsym">🌹</div>
 </footer>
 
