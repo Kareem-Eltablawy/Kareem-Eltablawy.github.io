@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Kareem Eltablawy — Unreal Engine & Unity Game Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Kareem Eltablawy — Unreal Engine &amp; Unity Game Developer</title>
 <meta name="description" content="Software Engineer | Unreal Engine & Unity Game Developer — UE5 C++, Unity C#, gameplay, AI, animation and performance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0A0008;
   --surf:#120010;
-  --surf2:#1A0018;
   --bdr:#2D0028;
   --bdr-hi:#490042;
-  --text:#FFFFFF;
   --text2:#EDD5FF;
-  --muted:#9060AA;
+  --muted:#9C70B4;
   --violet:#C084FC;
   --violet-l:#D8B4FE;
   --violet-bg:rgba(192,132,252,.10);
@@ -26,76 +27,71 @@
   --pink-bg:rgba(255,128,200,.09);
   --pink-bd:rgba(255,128,200,.26);
   --white:#FFFFFF;
-  --mono:'JetBrains Mono',monospace;
-  --sans:'Inter',sans-serif
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:dark
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text2);font-family:var(--sans);font-size:14px;line-height:1.65;min-height:100vh;overflow-x:hidden}
-
-body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.018) 2px,rgba(0,0,0,.018) 4px);pointer-events:none;z-index:999}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.05) 2px,rgba(0,0,0,.05) 4px);pointer-events:none;z-index:999}
 
 .g1,.g2,.g3{position:fixed;border-radius:50%;filter:blur(110px);pointer-events:none;z-index:0}
-.g1{width:600px;height:600px;background:radial-gradient(circle,rgba(180,0,40,.018) 0%,transparent 70%);top:-200px;right:-150px}
-.g2{width:500px;height:500px;background:radial-gradient(circle,rgba(140,0,30,.014) 0%,transparent 70%);bottom:15%;left:-120px}
-.g3{width:350px;height:350px;background:radial-gradient(circle,rgba(160,0,50,.010) 0%,transparent 70%);top:42%;right:10%}
+.g1{width:600px;height:600px;background:radial-gradient(circle,rgba(192,132,252,.13) 0%,transparent 70%);top:-200px;right:-150px}
+.g2{width:500px;height:500px;background:radial-gradient(circle,rgba(255,128,200,.09) 0%,transparent 70%);bottom:15%;left:-120px}
+.g3{width:350px;height:350px;background:radial-gradient(circle,rgba(192,132,252,.07) 0%,transparent 70%);top:42%;right:10%}
 
-.page{max-width:980px;margin:0 auto;padding:60px 32px 96px;position:relative;z-index:1}
+.page{max-width:1040px;margin:0 auto;padding:calc(60px + env(safe-area-inset-top,0px)) 32px calc(96px + env(safe-area-inset-bottom,0px));position:relative;z-index:1}
 
-/* ─── HEADER ─── */
+/* HEADER */
 header{margin-bottom:50px;padding-bottom:42px;border-bottom:1px solid var(--bdr);position:relative}
 header::before{content:'';position:absolute;top:0;left:0;width:52px;height:52px;border-top:2px solid var(--violet);border-left:2px solid var(--violet);opacity:.35}
 header::after{content:'';position:absolute;bottom:42px;right:0;width:52px;height:52px;border-bottom:2px solid var(--pink);border-right:2px solid var(--pink);opacity:.3}
 .hdr-inner{display:flex;align-items:flex-start;gap:22px;margin-bottom:20px}
 .ctrl{flex-shrink:0;margin-top:4px;color:var(--pink);filter:drop-shadow(0 0 12px rgba(255,128,200,.6))}
-.name{font-family:var(--mono);font-size:clamp(24px,4.8vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.08;margin-bottom:8px;background:linear-gradient(140deg,var(--white) 30%,var(--violet-l) 65%,var(--pink-l) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cursor{display:inline-block;width:3px;height:.8em;background:var(--pink);margin-left:4px;vertical-align:middle;animation:blink 1.1s step-end infinite;-webkit-text-fill-color:initial}
+.name{font-family:var(--mono);font-size:clamp(24px,4.8vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.08;margin-bottom:8px;background:linear-gradient(140deg,var(--white) 30%,var(--violet-l) 65%,var(--pink-l) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--white)}
+.cursor{display:inline-block;width:3px;height:.8em;background:var(--pink);margin-left:4px;vertical-align:middle;animation:blink 1.1s step-end infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--pink);margin-bottom:5px}
 .stack{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--violet-l);margin-bottom:18px}
-.contacts{display:flex;flex-wrap:wrap;gap:5px 20px}
-.contacts a{font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;transition:color .15s;display:flex;align-items:center;gap:5px}
-.contacts a:hover{color:var(--pink-l)}
+.contacts{display:flex;flex-wrap:wrap;gap:6px 22px}
+.contacts a{font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;transition:color .15s;overflow-wrap:anywhere}
+.contacts a:hover,.contacts a:focus-visible{color:var(--pink-l)}
+a:focus-visible,.ttab:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
 
-/* ─── STATS ─── */
+/* STATS */
 .stats{display:flex;border:1px solid var(--bdr);border-radius:6px;overflow:hidden;margin-bottom:44px;background:var(--surf)}
 .stat{flex:1;padding:14px 10px;text-align:center;border-right:1px solid var(--bdr)}
-.stat:last-child{border:none}
+.stat:last-child{border-right:none}
 .stat-n{font-family:var(--mono);font-size:17px;font-weight:700;color:var(--violet);display:block;margin-bottom:3px;text-shadow:0 0 18px rgba(192,132,252,.55)}
 .stat-l{font-family:var(--mono);font-size:8px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
 
-/* ─── LAYOUT ─── */
-.layout{display:grid;grid-template-columns:1fr 248px;gap:48px;align-items:start}
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:48px;align-items:start}
 
-/* ─── SECTION LABEL ─── */
+/* SECTION LABEL */
 .sl{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);margin-bottom:18px;display:flex;align-items:center;gap:9px}
-.sl .ic{font-size:12px;letter-spacing:0}
 .sl::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--bdr-hi),transparent)}
 .section{margin-bottom:40px}
 
-/* ─── SUMMARY ─── */
+/* SUMMARY */
 .summary{color:var(--text2);font-size:13px;line-height:1.85;padding:18px 20px;border:1px solid var(--bdr);border-left:3px solid var(--violet);background:var(--violet-bg);border-radius:0 5px 5px 0}
 
-/* ─── JOBS ─── */
+/* JOBS */
 .job{margin-bottom:30px;padding-bottom:30px;border-bottom:1px solid var(--bdr)}
 .job:last-child{border:none;margin:0;padding:0}
 .job-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:2px}
-.co{font-weight:600;font-size:14px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-.jb{font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;font-weight:500;border:1px solid}
-.jb-f{background:var(--pink-bg);color:var(--pink-l);border-color:var(--pink-bd)}
-.jb-c{background:var(--violet-bg);color:var(--violet);border-color:var(--violet-bd)}
-.jb-i{background:var(--pink-bg);color:var(--pink);border-color:var(--pink-bd)}
-.jb-v{background:var(--violet-bg);color:var(--violet-l);border-color:var(--violet-bd)}
+.co{font-weight:600;font-size:14px;color:var(--white)}
 .jdate{font-family:var(--mono);font-size:10px;color:var(--muted);white-space:nowrap;padding-top:3px}
-.jrole{font-family:var(--mono);font-size:10px;color:var(--violet-l);margin-bottom:10px}
-.job ul{list-style:none;display:flex;flex-direction:column;gap:7px}
-.job li{font-size:12px;color:var(--text2);line-height:1.72;padding-left:16px;position:relative}
-.job li::before{content:'🌸';position:absolute;left:0;font-size:8px;top:3px}
+.jrole{font-family:var(--mono);font-size:10.5px;color:var(--violet-l);margin-bottom:6px}
+.jtag{display:inline-block;font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;border:1px solid var(--pink-bd);background:var(--pink-bg);color:var(--pink-l);margin-bottom:10px}
+.job ul,.tlist{list-style:none;display:flex;flex-direction:column;gap:7px}
+.job li,.tlist li{font-size:12px;color:var(--text2);line-height:1.72;padding-left:16px;position:relative}
+.job li::before,.tlist li::before{content:'';position:absolute;left:3px;top:.72em;width:5px;height:5px;background:var(--pink);transform:rotate(45deg);opacity:.85}
 .hl{color:var(--white);font-weight:600}
-.vl{color:var(--violet-l)}
 .cd{font-family:var(--mono);font-size:10px;color:var(--pink);background:var(--pink-bg);padding:1px 5px;border-radius:2px;border:1px solid var(--pink-bd)}
 
-/* ─── PROJECTS ─── */
-.proj{padding:15px 17px;border:1px solid var(--bdr);border-radius:6px;background:var(--surf);margin-bottom:9px;transition:border-color .2s,box-shadow .2s,transform .18s;cursor:default}
+/* PROJECTS */
+.proj{padding:15px 17px;border:1px solid var(--bdr);border-radius:6px;background:var(--surf);margin-bottom:9px;transition:border-color .2s,box-shadow .2s,transform .18s}
 .proj:hover{border-color:var(--violet-bd);box-shadow:0 0 22px rgba(192,132,252,.09);transform:translateX(4px)}
 .pnum{font-family:var(--mono);font-size:8.5px;color:var(--pink);letter-spacing:.11em;margin-bottom:2px;text-transform:uppercase}
 .ptitle{font-weight:600;font-size:13px;margin-bottom:5px;color:var(--white)}
@@ -105,20 +101,19 @@ header::after{content:'';position:absolute;bottom:42px;right:0;width:52px;height
 .ptag{font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:3px;background:rgba(255,255,255,.02);color:var(--muted);border:1px solid var(--bdr);transition:all .14s}
 .proj:hover .ptag{border-color:var(--violet-bd);color:var(--violet-l)}
 
-/* ─── SIDEBAR ─── */
-.sidebar .section{margin-bottom:24px}
-.edu-d{font-weight:600;font-size:13px;margin-bottom:3px}
+/* SIDEBAR */
+.sidebar .section{margin-bottom:26px}
+.edu-d{font-weight:600;font-size:13px;margin-bottom:3px;color:var(--white)}
 .edu-s{font-size:12px;color:var(--muted);margin-bottom:3px}
 .edu-y{font-family:var(--mono);font-size:10px;color:var(--pink)}
 .lr{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--bdr);font-size:12.5px}
 .lr:last-child{border:none}
 .ll{font-family:var(--mono);font-size:9.5px;color:var(--violet-l)}
-.sg{margin-bottom:13px}
-.sgl{font-family:var(--mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--violet);margin-bottom:6px;display:flex;align-items:center;gap:5px}
-.sgl .si{letter-spacing:0;font-size:11px;text-transform:none}
+.sg{margin-bottom:14px}
+.sgl{font-family:var(--mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--violet);margin-bottom:6px}
 .tags{display:flex;flex-wrap:wrap;gap:4px}
-.tag{font-family:var(--mono);font-size:9.5px;padding:2px 8px;border-radius:3px;border:1px solid;transition:all .14s;cursor:default}
-.tag:hover{transform:scale(1.06)}
+.tag{font-family:var(--mono);font-size:9.5px;padding:2px 8px;border-radius:3px;border:1px solid;transition:all .14s}
+.tag:hover{transform:scale(1.04)}
 .tag.r{background:var(--pink-bg);color:var(--pink-l);border-color:var(--pink-bd)}
 .tag.r:hover{box-shadow:0 0 10px rgba(255,128,200,.4)}
 .tag.v{background:var(--violet-bg);color:var(--violet-l);border-color:var(--violet-bd)}
@@ -126,44 +121,63 @@ header::after{content:'';position:absolute;bottom:42px;right:0;width:52px;height
 .tag.m{background:rgba(255,255,255,.02);color:var(--muted);border-color:var(--bdr)}
 .tag.m:hover{border-color:var(--violet-bd);color:var(--violet-l)}
 
-/* ─── TECH SECTION ─── */
+/* TECH SECTION */
 .tech{margin-top:60px;padding-top:48px;border-top:1px solid var(--bdr)}
-.ttabs{display:flex;gap:4px;margin-bottom:34px;background:var(--surf);padding:4px;border-radius:8px;width:fit-content;border:1px solid var(--bdr)}
+.ttabs{display:flex;gap:4px;margin-bottom:30px;background:var(--surf);padding:4px;border-radius:8px;width:fit-content;max-width:100%;border:1px solid var(--bdr)}
 .ttab{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;padding:8px 22px;border-radius:5px;border:none;cursor:pointer;transition:all .2s;background:transparent;color:var(--muted)}
-.ttab.on{background:linear-gradient(135deg,var(--violet),var(--pink));color:#fff;box-shadow:0 0 20px rgba(192,132,252,.45)}
-.ttab:not(.on):hover{background:var(--violet-bg);color:var(--violet-l)}
+.ttab[aria-selected="true"]{background:linear-gradient(135deg,#9d5ce0,#e0609f);color:#fff;box-shadow:0 0 20px rgba(192,132,252,.45)}
+.ttab[aria-selected="false"]:hover{background:var(--violet-bg);color:var(--violet-l)}
 .tpanel{display:none}
 .tpanel.on{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.tengine{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);padding-bottom:12px;border-bottom:1px solid var(--bdr);grid-column:1/-1;display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.tengine{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);padding-bottom:12px;border-bottom:1px solid var(--bdr);grid-column:1/-1;margin-bottom:6px}
 .titem{padding:17px 18px;border:1px solid var(--bdr);border-radius:6px;background:var(--surf);transition:border-color .2s,box-shadow .2s;break-inside:avoid}
 .titem:hover{border-color:var(--violet-bd);box-shadow:0 0 20px rgba(192,132,252,.08)}
-.ttitle{font-weight:600;font-size:12.5px;margin-bottom:8px;color:var(--white);line-height:1.4;display:flex;align-items:flex-start;gap:7px}
-.ttitle .s{color:var(--pink);font-size:10px;flex-shrink:0;margin-top:2px}
+.tpanel .titem:last-child:nth-child(even){grid-column:1/-1}
+.ttitle{font-weight:600;font-size:12.5px;margin-bottom:10px;color:var(--white);line-height:1.4}
 .tdesc{font-size:11.5px;color:var(--text2);line-height:1.8}
+.titem .tlist li{font-size:11.5px;line-height:1.7}
 
-/* ─── FOOTER ─── */
+/* FOOTER */
 footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
 .fsig{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.09em}
-.fsym{font-size:22px;color:var(--pink);opacity:.4;filter:drop-shadow(0 0 8px rgba(255,128,200,.5))}
+.fsym{font-size:20px;color:var(--pink);opacity:.45}
 
-/* ─── RESPONSIVE ─── */
-@media(max-width:700px){
-  .page{padding:36px 18px 64px}
+/* RESPONSIVE */
+@media(max-width:820px){
   .layout{grid-template-columns:1fr}
   .sidebar{border-top:1px solid var(--bdr);padding-top:36px;margin-top:4px}
+}
+@media(max-width:700px){
+  .page{padding:calc(36px + env(safe-area-inset-top,0px)) 18px calc(64px + env(safe-area-inset-bottom,0px))}
   .stats{flex-wrap:wrap}
   .stat{min-width:50%;border-bottom:1px solid var(--bdr)}
   .stat:nth-child(2n){border-right:none}
   .tpanel.on{grid-template-columns:1fr}
+  .tpanel .titem:last-child:nth-child(even){grid-column:auto}
+  .job-top{flex-direction:column;gap:2px}
   header::after{display:none}
   .ctrl{width:34px;height:34px}
+  .ttab{padding:8px 14px}
 }
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cursor{animation:none}
+  .proj,.tag,.titem{transition:none}
+  .proj:hover{transform:none}
+}
+
+/* PRINT — light palette so it is readable on paper */
 @media print{
-  body{background:#fff;color:#000}
-  body::before,.g1,.g2,.g3{display:none}
-  .cursor{display:none}
-  .tpanel{display:block!important}
+  :root{--bg:#fff;--surf:#fff;--bdr:#ccc;--bdr-hi:#999;--text2:#222;--muted:#555;--violet:#6b21a8;--violet-l:#6b21a8;--violet-bg:#f5f0fa;--violet-bd:#cdb4e6;--pink:#be185d;--pink-l:#9d174d;--pink-bg:#fdf0f6;--pink-bd:#f0b6d2;--white:#000;color-scheme:light}
+  body{background:#fff;color:#222;font-size:11px}
+  body::before,.g1,.g2,.g3,.cursor,header::before,header::after{display:none}
+  .name{background:none;-webkit-text-fill-color:#000;color:#000}
+  .stat-n{text-shadow:none}
   .ttabs{display:none}
+  .tpanel,.tpanel[hidden]{display:grid!important;grid-template-columns:1fr 1fr;margin-bottom:24px}
+  .page{padding:0}
+  .job,.proj,.titem{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
@@ -173,345 +187,395 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
 
 <!-- HEADER -->
 <header>
-<div class="hdr-inner">
-  <svg class="ctrl" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 17C7 17 2.5 18 2 26L1.5 35C1.5 38.5 5 39.5 7.5 37L12 30H34L38.5 37C41 39.5 44.5 38.5 44.5 35L44 26C43.5 18 39 17 39 17H27V11.5H19V17H7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-    <line x1="12.5" y1="20" x2="12.5" y2="27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    <line x1="9" y1="23.5" x2="16" y2="23.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    <circle cx="31" cy="20.5" r="2" fill="currentColor"/>
-    <circle cx="35.5" cy="24" r="2" fill="currentColor"/>
-    <circle cx="26.5" cy="24" r="2" fill="currentColor"/>
-    <circle cx="31" cy="27.5" r="2" fill="currentColor"/>
-    <rect x="19.5" y="11.5" width="7" height="5.5" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/>
-  </svg>
-  <div>
-    <div class="name">Kareem Eltablawy<span class="cursor"></span> <span style="font-size:clamp(16px,2.5vw,26px);-webkit-text-fill-color:initial;opacity:.6">🌹</span></div>
-    <div class="role">⚔ Software Engineer &nbsp;·&nbsp; Unreal Engine &amp; Unity Game Developer</div>
-    <div class="stack">UE5 C++ &nbsp;·&nbsp; Unity C# &nbsp;·&nbsp; Gameplay &amp; AI &nbsp;·&nbsp; Animation</div>
+  <div class="hdr-inner">
+    <svg class="ctrl" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M7 17C7 17 2.5 18 2 26L1.5 35C1.5 38.5 5 39.5 7.5 37L12 30H34L38.5 37C41 39.5 44.5 38.5 44.5 35L44 26C43.5 18 39 17 39 17H27V11.5H19V17H7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      <line x1="12.5" y1="20" x2="12.5" y2="27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="9" y1="23.5" x2="16" y2="23.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="31" cy="20.5" r="2" fill="currentColor"/>
+      <circle cx="35.5" cy="24" r="2" fill="currentColor"/>
+      <circle cx="26.5" cy="24" r="2" fill="currentColor"/>
+      <circle cx="31" cy="27.5" r="2" fill="currentColor"/>
+      <rect x="19.5" y="11.5" width="7" height="5.5" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/>
+    </svg>
+    <div>
+      <h1 class="name">Kareem Eltablawy<span class="cursor" aria-hidden="true"></span></h1>
+      <div class="role">Software Engineer &nbsp;|&nbsp; Unreal Engine &amp; Unity Game Developer</div>
+      <div class="stack">UE5 C++ &nbsp;·&nbsp; Unity C# &nbsp;·&nbsp; Gameplay &amp; AI &nbsp;·&nbsp; Animation &nbsp;·&nbsp; Performance</div>
+    </div>
   </div>
-</div>
-<span style="position:absolute;top:8px;right:64px;font-size:18px;opacity:.18;pointer-events:none;filter:blur(.5px)">🌹</span>
-<span style="position:absolute;top:24px;right:44px;font-size:12px;opacity:.12;pointer-events:none">🌸</span>
-<div class="contacts">
-  <a href="tel:+201557779691">📞 +20 155 777 9691</a>
-  <a href="mailto:kareem.rafat.eltablawy@gmail.com">✉ kareem.rafat.eltablawy@gmail.com</a>
-  <a href="https://linkedin.com/in/kareem-e-67a538272" target="_blank" rel="noopener">⊕ LinkedIn</a>
-  <a href="https://github.com/Kareem-Eltablawy" target="_blank" rel="noopener">◈ GitHub</a>
-</div>
+  <div class="contacts">
+    <a href="tel:+201557779691">+20 155 777 9691</a>
+    <a href="mailto:kareem.rafat.eltablawy@gmail.com">kareem.rafat.eltablawy@gmail.com</a>
+    <a href="https://linkedin.com/in/kareem-e-67a538272" target="_blank" rel="noopener">linkedin.com/in/kareem-e-67a538272</a>
+    <a href="https://github.com/Kareem-Eltablawy" target="_blank" rel="noopener">github.com/Kareem-Eltablawy</a>
+  </div>
 </header>
 
 <!-- STATS -->
 <div class="stats">
-  <div class="stat"><span class="stat-n" data-t="11">0</span><span class="stat-l">Games Released</span></div>
-  <div class="stat"><span class="stat-n" data-t="13">0</span><span class="stat-l">Prototypes</span></div>
-  <div class="stat"><span class="stat-n" data-t="3">0</span><span class="stat-l">Studios</span></div>
-  <div class="stat"><span class="stat-n" data-t="2">0</span><span class="stat-l">Engines</span></div>
+  <div class="stat"><span class="stat-n" data-t="11">11</span><span class="stat-l">Games Released</span></div>
+  <div class="stat"><span class="stat-n" data-t="13">13</span><span class="stat-l">Prototypes</span></div>
+  <div class="stat"><span class="stat-n" data-t="7" data-s=" KB">7 KB</span><span class="stat-l">NPC Daily-Life Data</span></div>
+  <div class="stat"><span class="stat-n" data-t="0">0</span><span class="stat-l">Tick Functions · NPC System</span></div>
 </div>
 
-<!-- MAIN LAYOUT -->
 <div class="layout">
 <main>
 
-<!-- PROFILE -->
+<!-- SUMMARY -->
 <section class="section">
-<div class="sl"><span class="ic">◈</span> Professional Summary</div>
-<p class="summary">
-  Software engineer and game developer who builds games in Unreal Engine 5 (C++) and Unity (C#). As founder of Strawberries, I lead the technical side of my own game, Project Moon, covering gameplay, AI, animation, performance, tools and the asset pipeline. I like systems that run smoothly on real hardware and that designers can tune without touching code. I’m looking for a mid-level game development role.
-</p>
+  <div class="sl">Professional Summary</div>
+  <p class="summary">
+    Software engineer and game developer who builds games in Unreal Engine 5 (C++) and Unity (C#). As founder of Strawberries, I lead the technical side of my own game, Project Moon, covering gameplay, AI, animation, performance, tools and the asset pipeline. I favor event-driven, timer-based systems over per-frame Tick, compact cache-friendly data, and Data Assets that let designers tune everything without touching code.
+  </p>
 </section>
 
 <!-- WORK EXPERIENCE -->
 <section class="section">
-<div class="sl"><span class="ic">⚔</span> Work Experience</div>
+  <div class="sl">Work Experience</div>
 
-<div class="job">
-  <div class="job-top">
-    <div class="co">Strawberries <span class="jb jb-f">Founder</span></div>
-    <div class="jdate">Aug 2025 – Present</div>
+  <div class="job">
+    <div class="job-top">
+      <div class="co">Strawberries</div>
+      <div class="jdate">Aug 2025 – Present</div>
+    </div>
+    <div class="jrole">Founder &amp; Unreal Engine Developer</div>
+    <ul>
+      <li>Founded and run my own game studio, and lead development of Project Moon, an open-world fantasy action game.</li>
+      <li>Own the technical side end to end: architecture, gameplay, AI, animation, optimization and tooling.</li>
+      <li>Reached a <span class="hl">playable MVP</span> with multiple enemy types, companions and a MetaHuman player character.</li>
+      <li>Build core systems in <span class="hl">native C++</span> with zero-Tick, event-driven design, using Blueprints only for designer-facing configuration.</li>
+      <li>Built an NPC daily-life system with <span class="hl">zero Tick functions</span>, where each NPC's behavior state packs into <span class="hl">one 32-bit word</span>. It runs on about <span class="hl">7 KB</span> of cache-line-aligned data, driven by a world-clock hour event and one-shot timers.</li>
+      <li>Run the content pipeline: AI-generated models cleaned up and optimized in Blender, then integrated into UE5, plus basic cinematics.</li>
+    </ul>
   </div>
-  <div class="jrole">Unreal Engine Developer</div>
-  <ul>
-    <li>Founded and run my own game studio, and lead development of Project Moon, an open-world fantasy action game that has reached a <span class="hl">playable MVP</span> with multiple enemy types, companions and a MetaHuman player character.</li>
-    <li>Own the technical side end to end: architecture, gameplay, AI, animation, optimization and tooling, with core systems in <span class="hl">native C++</span> and Blueprints used only for designer-facing configuration.</li>
-    <li>Run the content pipeline: AI-generated models cleaned up and optimized in Blender, then integrated into UE5, plus basic cinematics.</li>
-  </ul>
-</div>
 
-<div class="job">
-  <div class="job-top">
-    <div class="co">Emerald Space <span class="jb jb-i">Freelance Studio</span></div>
-    <div class="jdate">Nov 2023 – Present</div>
+  <div class="job">
+    <div class="job-top">
+      <div class="co">Emerald Space</div>
+      <div class="jdate">Nov 2023 – Present</div>
+    </div>
+    <div class="jrole">Freelance Unity studio</div>
+    <ul>
+      <li>Built AI systems from scratch in C# (behavior trees, utility AI, FSMs) for strategy, simulation and open-world projects.</li>
+      <li>Released <span class="hl">11 playable games</span> and <span class="hl">13 prototypes</span> on PC and mobile.</li>
+      <li>Built data pipelines that let server data update game content without code changes or rebuilds.</li>
+      <li>Built world streaming and object pooling for open environments and mobile performance.</li>
+      <li>Optimized and integrated AI-generated models in Unity. Set up basic cinematics.</li>
+    </ul>
   </div>
-  <div class="jrole">Unity Developer</div>
-  <ul>
-    <li>Built AI systems from scratch in C# (behavior trees, utility AI, FSMs) for strategy, simulation and open-world projects.</li>
-    <li>Built data pipelines that let server data update game content without code changes or rebuilds, plus world streaming and object pooling for open environments and mobile performance.</li>
-    <li>Released <span class="hl">11 playable games</span> and <span class="hl">13 prototypes</span> on PC and mobile, optimizing and integrating AI-generated models in Unity and setting up basic cinematics.</li>
-  </ul>
-</div>
 
-<div class="job">
-  <div class="job-top">
-    <div class="co">Axiosys Studios <span class="jb jb-v">Shared Revenue</span></div>
-    <div class="jdate">Jul 2025 – Dec 2025</div>
+  <div class="job">
+    <div class="job-top">
+      <div class="co">Axiosys Studios</div>
+      <div class="jdate">Jul 2025 – Dec 2025</div>
+    </div>
+    <div class="jrole">Unreal Engine Developer</div>
+    <span class="jtag">Shared Revenue</span>
+    <ul>
+      <li>Built the core game-state system in C++ (gameplay, pause, menu and blocked states).</li>
+      <li>Implemented crafting and foundational gameplay mechanics, with Blueprint kept to designer configuration.</li>
+    </ul>
   </div>
-  <div class="jrole">Unreal Engine Developer</div>
-  <ul>
-    <li>Built the core game-state system in C++ (gameplay, pause, menu and blocked states).</li>
-    <li>Implemented crafting and foundational gameplay mechanics, with Blueprint kept to designer configuration.</li>
-  </ul>
-</div>
-
 </section>
 
 <!-- NOTABLE PROJECTS -->
 <section class="section">
-<div class="sl"><span class="ic">◆</span> Notable Projects</div>
+  <div class="sl">Notable Projects</div>
 
-<div class="proj">
-  <div class="pnum">I — SunShine</div>
-  <div class="ptitle">SunShine <span class="pbadge">· A+ Graduation Award</span></div>
-  <div class="pdesc">Graduation project of four indie games and a game store website, graded A+ and recognized with certificate awards.</div>
-  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">ASP.NET</span><span class="ptag">Indie Games</span><span class="ptag">Store Website</span></div>
-</div>
+  <article class="proj">
+    <div class="pnum">01 · Graduation Project</div>
+    <div class="ptitle">SunShine <span class="pbadge">· A+ grade · certificate awards</span></div>
+    <div class="pdesc">Graduation project of four indie games and a game store website.</div>
+    <div class="ptags"><span class="ptag">4 Indie Games</span><span class="ptag">Game Store Website</span></div>
+  </article>
 
-<div class="proj">
-  <div class="pnum">II — Red Dunes</div>
-  <div class="ptitle">Red Dunes</div>
-  <div class="pdesc">Market-management simulation built on a single scalable FSM, with crowd and NPC systems.</div>
-  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">FSM</span><span class="ptag">Crowd &amp; NPC Systems</span></div>
-</div>
+  <article class="proj">
+    <div class="pnum">02</div>
+    <div class="ptitle">Red Dunes</div>
+    <div class="pdesc">Market-management sim on a single scalable FSM, with crowd and NPC systems.</div>
+    <div class="ptags"><span class="ptag">FSM</span><span class="ptag">Crowd Systems</span><span class="ptag">NPC Systems</span></div>
+  </article>
 
-<div class="proj">
-  <div class="pnum">III — Gather The Plants</div>
-  <div class="ptitle">Gather The Plants</div>
-  <div class="pdesc">Casual mobile runner with coins, sound effects and a settings menu.</div>
-  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">Mobile</span><span class="ptag">Casual Runner</span></div>
-</div>
+  <article class="proj">
+    <div class="pnum">03</div>
+    <div class="ptitle">Gather The Plants</div>
+    <div class="pdesc">Casual mobile runner with coins, sound effects and a settings menu.</div>
+    <div class="ptags"><span class="ptag">Mobile</span><span class="ptag">Casual Runner</span></div>
+  </article>
 
-<div class="proj">
-  <div class="pnum">IV — Floral Essence</div>
-  <div class="ptitle">Floral Essence</div>
-  <div class="pdesc">Sensory-driven enemy AI and allied NPC combat, with distance-based AI and animation scaling.</div>
-  <div class="ptags"><span class="ptag">Unity C#</span><span class="ptag">Sensory AI</span><span class="ptag">NPC Combat</span><span class="ptag">AI &amp; Animation LOD</span></div>
-</div>
+  <article class="proj">
+    <div class="pnum">04</div>
+    <div class="ptitle">Floral Essence</div>
+    <div class="pdesc">Sensory-driven enemy AI and allied NPC combat, with distance-based AI and animation scaling.</div>
+    <div class="ptags"><span class="ptag">Sensory AI</span><span class="ptag">Allied NPC Combat</span><span class="ptag">AI &amp; Animation Scaling</span></div>
+  </article>
 
-<div class="proj">
-  <div class="pnum">V — In Development</div>
-  <div class="ptitle">Project Moon <span class="pbadge">· Playable MVP</span></div>
-  <div class="pdesc">An open-world fantasy action game in Unreal Engine 5, with multiple enemy types, companions and a MetaHuman player character. Enemy, companion and NPC AI is written entirely in C++ without Behavior Trees, alongside custom C++ animation systems. It also has a day/night cycle with NPC daily routines, a player-led companion team, and Data Assets that designers can tune without touching code.</div>
-  <div class="ptags"><span class="ptag">UE5 C++</span><span class="ptag">Open World</span><span class="ptag">Data Assets</span><span class="ptag">Zero-Tick</span><span class="ptag">MetaHuman</span></div>
-</div>
-
+  <article class="proj">
+    <div class="pnum">05 · In Development</div>
+    <div class="ptitle">Project Moon <span class="pbadge">· playable MVP</span></div>
+    <div class="pdesc">An open-world fantasy action game with multiple enemy types, companions and a MetaHuman player character. Enemy, companion and NPC AI is written entirely in C++ alongside custom C++ animation systems. It also has an event-driven day/night cycle, NPC daily routines driven by in-game time, a player-led companion team, and Data Assets that designers can tune without touching code.</div>
+    <div class="ptags"><span class="ptag">UE5 C++</span><span class="ptag">Open World</span><span class="ptag">Zero-Tick</span><span class="ptag">MetaHuman</span><span class="ptag">Data Assets</span><span class="ptag">Custom Animation</span></div>
+  </article>
 </section>
+
 </main>
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
 
-<section class="section">
-  <div class="sl">◈ Education</div>
-  <div class="edu-d">Bachelor of Computer Science &amp; Engineering</div>
-  <div class="edu-s">New Mansoura University</div>
-  <div class="edu-y">2021 – 2025</div>
-</section>
+  <section class="section">
+    <div class="sl">Education</div>
+    <div class="edu-d">Bachelor of Computer Science &amp; Engineering</div>
+    <div class="edu-s">New Mansoura University</div>
+    <div class="edu-y">2021 – 2025</div>
+  </section>
 
-<section class="section">
-  <div class="sl">◈ Languages</div>
-  <div class="lr"><span>Arabic</span><span class="ll">Native · C2</span></div>
-  <div class="lr"><span>English</span><span class="ll">Advanced · C1</span></div>
-  <div class="lr"><span>French</span><span class="ll">Elementary · A2</span></div>
-</section>
+  <section class="section">
+    <div class="sl">Languages</div>
+    <div class="lr"><span>Arabic</span><span class="ll">Native</span></div>
+    <div class="lr"><span>English</span><span class="ll">Advanced</span></div>
+    <div class="lr"><span>French</span><span class="ll">Basic</span></div>
+  </section>
 
-<section class="section">
-  <div class="sl">◈ Skills</div>
+  <section class="section">
+    <div class="sl">Skills</div>
 
-  <div class="sg">
-    <div class="sgl"><span class="si">💻⚡</span> Programming Languages</div>
-    <div class="tags">
-      <span class="tag r">C</span><span class="tag r">C++</span><span class="tag r">C#</span>
-      <span class="tag m">Python</span><span class="tag m">Java</span><span class="tag m">SQL</span>
+    <div class="sg">
+      <div class="sgl">Programming Languages</div>
+      <div class="tags">
+        <span class="tag r">C</span><span class="tag r">C++</span><span class="tag r">C#</span>
+        <span class="tag m">Python</span><span class="tag m">Java</span><span class="tag m">SQL</span>
+      </div>
     </div>
-  </div>
 
-  <div class="sg">
-    <div class="sgl"><span class="si">🎮⚔️</span> Engines &amp; Frameworks</div>
-    <div class="tags">
-      <span class="tag r">Unreal Engine 5</span><span class="tag r">Unity</span>
-      <span class="tag m">.NET</span><span class="tag m">ASP.NET</span><span class="tag m">MAUI</span>
+    <div class="sg">
+      <div class="sgl">Engines &amp; Frameworks</div>
+      <div class="tags">
+        <span class="tag r">Unreal Engine 5</span><span class="tag r">Unity</span>
+        <span class="tag m">.NET</span><span class="tag m">ASP.NET</span><span class="tag m">MAUI</span>
+      </div>
     </div>
-  </div>
 
-  <div class="sg">
-    <div class="sgl"><span class="si">🧠👁️⚔️</span> Gameplay &amp; AI</div>
-    <div class="tags">
-      <span class="tag v">Behavior Trees</span><span class="tag v">Finite State Machines</span>
-      <span class="tag v">GOAP</span><span class="tag v">Utility AI</span>
-      <span class="tag m">Event-Driven Systems</span>
-      <span class="tag m">Data-Driven NPC Pipelines</span>
-      <span class="tag m">Parallel State Machines</span>
-      <span class="tag m">Zero-Tick Brain Architecture</span>
+    <div class="sg">
+      <div class="sgl">Gameplay &amp; AI</div>
+      <div class="tags">
+        <span class="tag v">Finite State Machines</span><span class="tag v">Behavior Trees</span>
+        <span class="tag v">GOAP</span><span class="tag v">Utility AI</span>
+        <span class="tag m">Event-Driven Systems</span>
+        <span class="tag m">Data-Driven NPC Pipelines</span>
+        <span class="tag m">Parallel State Machines</span>
+        <span class="tag m">Zero-Tick Brain Architecture</span>
+        <span class="tag m">Baked Schedule Tables</span>
+        <span class="tag m">Jump-Table Step Dispatch</span>
+      </div>
     </div>
-  </div>
 
-  <div class="sg">
-    <div class="sgl"><span class="si">🎭🦾</span> Animation Systems</div>
-    <div class="tags">
-      <span class="tag v">FAnimInstanceProxy</span>
-      <span class="tag m">Mode A/B/C Blend Architecture</span>
-      <span class="tag m">Snapshot Blending</span>
-      <span class="tag m">Motion Matching (GASP C++)</span>
-      <span class="tag m">Upper/Lower Body Concurrent Layers</span>
-      <span class="tag m">MetaHuman Face Pipeline</span>
-      <span class="tag m">ControlRig</span>
-      <span class="tag m">RigLogic</span>
-      <span class="tag m">Face Control Board</span>
-      <span class="tag m">Proxy Anim Instances</span>
-      <span class="tag m">Animation Sequencer</span>
+    <div class="sg">
+      <div class="sgl">Animation Systems</div>
+      <div class="tags">
+        <span class="tag v">FAnimInstanceProxy (worker-thread sampling)</span>
+        <span class="tag m">Mode A/B/C Blend Architecture</span>
+        <span class="tag m">Snapshot Blending</span>
+        <span class="tag m">Motion Matching (GASP C++)</span>
+        <span class="tag m">Upper/Lower Body Concurrent Layers</span>
+        <span class="tag m">MetaHuman Face Pipeline</span>
+        <span class="tag m">ControlRig</span>
+        <span class="tag m">RigLogic</span>
+        <span class="tag m">Face Control Board</span>
+        <span class="tag m">Proxy Anim Instances</span>
+        <span class="tag m">Animation Sequencer</span>
+      </div>
     </div>
-  </div>
 
-  <div class="sg">
-    <div class="sgl"><span class="si">⚡🔩</span> Performance &amp; Systems</div>
-    <div class="tags">
-      <span class="tag v">Actor Pooling</span>
-      <span class="tag m">Overlap-Based Activation Volumes</span>
-      <span class="tag m">Zero-Tick Architecture</span>
-      <span class="tag m">Timer-Driven Projectile Pools</span>
-      <span class="tag m">Multithreading</span>
-      <span class="tag m">Memory Pooling</span>
-      <span class="tag m">Asset Streaming</span>
-      <span class="tag m">Data-Oriented Design</span>
-      <span class="tag m">Curve-Driven Character Movement</span>
+    <div class="sg">
+      <div class="sgl">Performance &amp; Systems</div>
+      <div class="tags">
+        <span class="tag v">Cache-Line-Aligned Hot Structs</span>
+        <span class="tag v">Bit-Packed State Words</span>
+        <span class="tag v">Actor Pooling</span>
+        <span class="tag m">Overlap-Based Activation Volumes</span>
+        <span class="tag m">Zero-Tick Architecture</span>
+        <span class="tag m">Timer-Driven Projectile Pools</span>
+        <span class="tag m">Multithreading</span>
+        <span class="tag m">Memory Pooling</span>
+        <span class="tag m">Asset Streaming</span>
+        <span class="tag m">Data-Oriented Design</span>
+        <span class="tag m">Curve-Driven Character Movement</span>
+      </div>
     </div>
-  </div>
 
-  <div class="sg">
-    <div class="sgl"><span class="si">🏰🛡️🗡️</span> Architecture</div>
-    <div class="tags">
-      <span class="tag v">UPrimaryDataAsset Hierarchies</span>
-      <span class="tag m">OOP &amp; Design Patterns</span>
-      <span class="tag m">UPROPERTY GC Contracts</span>
-      <span class="tag m">TObjectPtr Ownership</span>
-      <span class="tag m">TWeakObjectPtr Cross-Actor Safety</span>
-      <span class="tag m">AC-as-Brain / Proxy-as-Reader</span>
-      <span class="tag m">Inheritance-Driven NPC Scalability</span>
-      <span class="tag m">Zero Heap Allocation Hot Paths</span>
-      <span class="tag m">Network Prediction (FSavedMove_Character)</span>
+    <div class="sg">
+      <div class="sgl">Architecture</div>
+      <div class="tags">
+        <span class="tag v">UPrimaryDataAsset Hierarchies</span>
+        <span class="tag m">OOP &amp; Design Patterns</span>
+        <span class="tag m">UPROPERTY GC Contracts</span>
+        <span class="tag m">TObjectPtr Ownership</span>
+        <span class="tag m">TWeakObjectPtr Cross-Actor Safety</span>
+        <span class="tag m">AC-as-Brain / Proxy-as-Reader</span>
+        <span class="tag m">Inheritance-Driven NPC Scalability</span>
+        <span class="tag m">Network Prediction (FSavedMove_Character)</span>
+      </div>
     </div>
-  </div>
 
-  <div class="sg">
-    <div class="sgl"><span class="si">🛠️</span> Tools</div>
-    <div class="tags">
-      <span class="tag m">Git</span><span class="tag m">Agile / Scrum</span><span class="tag m">Technical Documentation</span>
+    <div class="sg">
+      <div class="sgl">Tools</div>
+      <div class="tags">
+        <span class="tag m">Git</span><span class="tag m">Unreal Insights</span><span class="tag m">Blender</span>
+        <span class="tag m">Agile / Scrum</span><span class="tag m">Technical Documentation</span>
+      </div>
     </div>
-  </div>
+  </section>
 
-</section>
 </aside>
 </div>
 
 <!-- TECHNICAL ARCHITECTURE -->
 <section class="tech">
-<div class="sl"><span class="ic">⚙</span> Technical Architecture</div>
-<div class="ttabs">
-  <button class="ttab on" data-p="ue5">⚔ Unreal Engine 5</button>
-  <button class="ttab" data-p="unity">◈ Unity</button>
-</div>
-
-<!-- UE5 PANEL -->
-<div class="tpanel on" id="p-ue5">
-  <div class="tengine">⚔ Unreal Engine 5 — Native C++ Systems</div>
-
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>AI &amp; Combat — Event-Driven C++, No Behavior Trees</div>
-    <div class="tdesc">Enemy, companion and NPC AI is written entirely in C++, without Behavior Trees. Each brain follows a <span class="cd">zero-tick</span> design, so it reacts to events such as overlaps, timers and animation completions instead of checking the world every frame. That covers attacks, dodging, defending and hit reactions, and because NPC types are built through inheritance, a new enemy or companion extends an existing base instead of starting from scratch.</div>
+  <div class="sl">Technical Architecture</div>
+  <div class="ttabs" role="tablist" aria-label="Engine">
+    <button class="ttab" role="tab" id="t-ue5" aria-selected="true" aria-controls="p-ue5" data-p="ue5">Unreal Engine 5</button>
+    <button class="ttab" role="tab" id="t-unity" aria-selected="false" aria-controls="p-unity" data-p="unity" tabindex="-1">Unity</button>
   </div>
 
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Animation — Custom C++ with Smooth Interrupts</div>
-    <div class="tdesc">Characters run on custom C++ animation systems built around <span class="cd">FAnimInstanceProxy</span>, with upper and lower body working as concurrent layers. Transitions use snapshot blending, so when a hit reaction or other interrupt lands, the character blends out of the pose it is actually in and nothing pops. The system stays stable with many characters on screen, and faces run through the MetaHuman pipeline with ControlRig and RigLogic.</div>
+  <!-- UE5 -->
+  <div class="tpanel on" id="p-ue5" role="tabpanel" aria-labelledby="t-ue5">
+    <div class="tengine">Unreal Engine 5 — Native C++ Systems</div>
+
+    <div class="titem">
+      <div class="ttitle">Day/night cycle <span class="cd">event-driven, no Tick</span></div>
+      <ul class="tlist">
+        <li>Run the sun, sky, fog, moon, post-process and tagged lamps from timers and baked per-minute data instead of Tick.</li>
+        <li>Broadcast hour, day and night events through multicast delegates so other systems subscribe instead of polling.</li>
+        <li>Hand lighting over at sunrise and sunset in two frames: switch the leaving group off, verify it, then switch the arriving group on.</li>
+        <li>Store the cycle in a Data Asset with an editor Bake step that validates itself, logs problems and rebuilds when stale.</li>
+        <li>Auto-discover lights and volumes by tag and keep the clock non-spatially-loaded for World Partition.</li>
+      </ul>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">NPC daily routines</div>
+      <ul class="tlist">
+        <li>Drive NPC schedules from the world clock's hour event: compare a baked weekly timetable to the current behavior and run a routine only when they differ.</li>
+        <li>Run routines as step lists on one-shot timers, with mid-day resume on level load and navmesh retry/skip fallbacks.</li>
+        <li>Keep NPC state packed into bit fields in a cache-line-aligned hot struct, and dispatch steps through a jump table.</li>
+      </ul>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">Animation</div>
+      <ul class="tlist">
+        <li>Wrote a custom <span class="cd">FAnimInstanceProxy</span> that samples sequences directly on the worker thread, with no per-frame game-thread animation update.</li>
+        <li>Blend between states with a frozen snapshot of the outgoing pose, so interrupts never pop and a second sample is taken only during the blend window.</li>
+        <li>Bake the animation slot table from Data Assets on first load, rejecting invalid or additive sequences and logging missing assets.</li>
+      </ul>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">Companions</div>
+      <ul class="tlist">
+        <li>Companion NPCs with no actor Tick, AI-driven movement through direct velocity writes, and a pooled-style activate/deactivate lifecycle that clears timers on despawn.</li>
+        <li>Cache raw engine pointers from GC-owned UPROPERTYs after every anim rebuild, and register companions with the player character for a player-led team with commands and roster limits.</li>
+      </ul>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">AI &amp; combat</div>
+      <ul class="tlist">
+        <li>Enemy, companion and NPC AI written entirely in C++, with attacks, dodging, defending and hit reactions.</li>
+      </ul>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">Data-driven design</div>
+      <ul class="tlist">
+        <li>Designers tune schedules, animations, timings and lighting in Data Assets without changing code.</li>
+      </ul>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">Performance</div>
+      <ul class="tlist">
+        <li>Event-driven logic, distance-based AI and animation LOD, and compact cache-line-aligned data for hot paths.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Living World — Day/Night Cycle &amp; NPC Routines</div>
-    <div class="tdesc">The world has a day/night cycle, and NPCs follow daily routines of sleeping, eating and idling that are driven by in-game time. This lets the same NPCs feel different at different hours without scripting each scene by hand, and the schedules are tuned through data instead of code.</div>
+  <!-- UNITY -->
+  <div class="tpanel" id="p-unity" role="tabpanel" aria-labelledby="t-unity" hidden>
+    <div class="tengine">Unity — C# Systems Architecture</div>
+
+    <div class="titem">
+      <div class="ttitle">AI — BTs, FSMs &amp; Utility AI</div>
+      <div class="tdesc">All decision logic built from scratch in C# — no engine defaults, no third-party frameworks. Behavior Trees, Finite State Machines and Utility AI systems fully owned at the code level, applied across strategy, simulation and open-world environments sustaining large NPC counts on mobile without frame degradation. State transitions are discrete and auditable — no implicit graph traversal, no hidden per-frame evaluation.</div>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">Data-Driven Scriptable Objects</div>
+      <div class="tdesc">Full ScriptableObject pipelines as the single source of truth across all projects — config fully decoupled from logic. SO values are injectable at runtime via JSON feeds from ASP.NET backends and external REST APIs, so server data flows directly into game state without touching code or triggering rebuilds. Cross-game progression, save state and live configuration changes all resolve through the same pipeline. The contract is explicit: <span class="cd">Server → SO → game</span>.</div>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">Event-Driven, Near-Zero Update</div>
+      <div class="tdesc">The Update loop is reserved strictly for animation, physics and player input, where frame-continuous evaluation is unavoidable. Every other system — state changes, NPC triggers, UI updates, progression tracking — responds to C# events and UnityEvent signals. No continuous polling, no redundant per-frame checks: systems are wired at bind time so event emission is the only path to state change.</div>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">Performance — DOTS &amp; World Streaming</div>
+      <div class="tdesc">World streaming and object pooling for large open environments, combined with AI LOD techniques and pooled components, sustain stable frame rates on mobile targets. 3D model optimization happens directly in Unity — polycounts, LOD chains, simplified materials — without relying on post-export fixes. <span class="cd">ECS</span>, <span class="cd">Job System</span> and <span class="cd">Burst Compiler</span> are applied for CPU-bound simulation workloads where single-threaded C# evaluation could not meet frame time targets.</div>
+    </div>
   </div>
-
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Companions — Player-Led Team</div>
-    <div class="tdesc">The player leads a companion team and gives it commands, with limits on roster size so the team stays readable and manageable in combat. Companions use the same event-driven C++ approach as enemies, so they stay cheap to run even when several of them are active alongside the player.</div>
-  </div>
-
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Data-Driven Design — Tuned in Data Assets</div>
-    <div class="tdesc">Designers tune values in Data Assets without changing code, using a <span class="cd">UPrimaryDataAsset</span> hierarchy for the project's settings. Blueprints are kept to designer-facing configuration while the core systems stay in native C++. Ownership is explicit as well, with <span class="cd">TObjectPtr</span> for owned objects and <span class="cd">TWeakObjectPtr</span> across actors, which keeps garbage collection predictable.</div>
-  </div>
-
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Performance — Event-Driven, LOD &amp; Compact Data</div>
-    <div class="tdesc">Logic is event-driven rather than ticked, and AI and animation both use distance-based LOD, so characters far from the player are cheap to run. Hot paths use compact data layouts and avoid heap allocation, while actor pooling, overlap-based activation volumes and timer-driven projectile pools keep spawning and activation costs down.</div>
-  </div>
-
-</div>
-
-<!-- UNITY PANEL -->
-<div class="tpanel" id="p-unity">
-  <div class="tengine">◈ Unity — C# Systems Architecture</div>
-
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>AI Written from Scratch in C#</div>
-    <div class="tdesc">Behavior trees, FSMs and utility AI are all written from scratch in C#, which I have used across strategy, simulation and open-world projects. Owning the AI code means decisions are easy to trace and tune, and each system can be built to fit the performance budget of the project instead of adapting to a framework.</div>
-  </div>
-
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Data-Driven Design — ScriptableObjects &amp; Backends</div>
-    <div class="tdesc">ScriptableObjects are the source of truth for game data, fed by JSON from ASP.NET and REST backends. The result is that server data can update game content without code changes or rebuilds, so values can change quickly without waiting for a new build.</div>
-  </div>
-
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Event-Driven — Update Only Where It Counts</div>
-    <div class="tdesc">Update is used only for animation, physics and input, and everything else runs on events. Systems do work when something actually happens, which keeps per-frame cost low and makes behavior easier to follow because each change has a clear trigger.</div>
-  </div>
-
-  <div class="titem">
-    <div class="ttitle"><span class="s">▸</span>Performance — Streaming, Pooling, LOD &amp; ECS</div>
-    <div class="tdesc">World streaming, object pooling and AI LOD keep open environments and mobile builds running smoothly. For CPU-heavy simulation I use ECS, the Job System and Burst, so large amounts of work can be spread across cores instead of sitting on the main thread.</div>
-  </div>
-
-</div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="fsig">Kareem Eltablawy &nbsp;·&nbsp; Software Engineer | Unreal Engine &amp; Unity Game Developer &nbsp;·&nbsp; 2026</div>
-  <div class="fsym">🌹</div>
+  <div class="fsym" aria-hidden="true">◈</div>
 </footer>
 
 </div>
 
 <script>
 (function(){
-  document.querySelectorAll('.ttab').forEach(function(t){
-    t.addEventListener('click',function(){
-      document.querySelectorAll('.ttab').forEach(function(x){x.classList.remove('on')});
-      document.querySelectorAll('.tpanel').forEach(function(x){x.classList.remove('on')});
-      t.classList.add('on');
-      document.getElementById('p-'+t.dataset.p).classList.add('on');
+  /* Tabs (click + arrow keys) */
+  var tabs=[].slice.call(document.querySelectorAll('.ttab'));
+  function select(tab){
+    tabs.forEach(function(t){
+      var on=t===tab;
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+      var p=document.getElementById(t.getAttribute('aria-controls'));
+      p.classList.toggle('on',on);
+      p.hidden=!on;
+    });
+    tab.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(t)});
+    t.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      else if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      else if(e.key==='Home')n=tabs[0];
+      else if(e.key==='End')n=tabs[tabs.length-1];
+      if(n){e.preventDefault();select(n)}
     });
   });
 
+  /* Count-up stats (final values are already in the HTML; this only animates) */
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window))return;
+
   function countUp(el){
-    var target=parseInt(el.dataset.t,10);
-    if(isNaN(target)) return;
-    var dur=1000,start=null;
+    var target=parseInt(el.dataset.t,10),suffix=el.dataset.s||'',start=null,dur=1000;
+    if(isNaN(target))return;
     function step(ts){
-      if(!start) start=ts;
+      if(start===null)start=ts;
       var p=Math.min((ts-start)/dur,1);
-      el.textContent=Math.floor(p*target);
-      if(p<1) requestAnimationFrame(step);
-      else el.textContent=target;
+      el.textContent=Math.floor(p*target)+suffix;
+      if(p<1)requestAnimationFrame(step);
+      else el.textContent=target+suffix;
     }
     requestAnimationFrame(step);
   }
@@ -520,7 +584,10 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--bdr);display:
       if(e.isIntersecting){countUp(e.target);io.unobserve(e.target)}
     });
   },{threshold:.5});
-  document.querySelectorAll('.stat-n[data-t]').forEach(function(el){io.observe(el)});
+  document.querySelectorAll('.stat-n[data-t]').forEach(function(el){
+    el.textContent='0'+(el.dataset.s||'');
+    io.observe(el);
+  });
 })();
 </script>
 </body>
