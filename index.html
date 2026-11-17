@@ -71,14 +71,6 @@ header::after{content:'';position:absolute;bottom:42px;right:0;width:52px;height
 .contacts a:hover,.contacts a:focus-visible{color:var(--red-l)}
 a:focus-visible,.ttab:focus-visible{outline:2px solid var(--red);outline-offset:3px}
 
-/* STATS */
-.stats{display:flex;border:1px solid var(--bdr);border-radius:6px;overflow:hidden;margin-bottom:44px;background:var(--surf)}
-.stat{flex:1;padding:14px 10px;text-align:center;border-right:1px solid var(--bdr)}
-.stat:last-child{border-right:none}
-.stat-n{font-family:var(--mono);font-size:17px;font-weight:700;color:var(--green);display:block;margin-bottom:3px;text-shadow:0 0 14px rgba(143,203,168,.25)}
-.stat:nth-child(even) .stat-n{color:var(--red);text-shadow:0 0 14px rgba(232,144,159,.25)}
-.stat-l{font-family:var(--mono);font-size:8px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
-
 /* LAYOUT */
 .layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:48px;align-items:start}
 
@@ -103,7 +95,6 @@ a:focus-visible,.ttab:focus-visible{outline:2px solid var(--red);outline-offset:
 .job li,.tlist li{font-size:12px;color:var(--text2);line-height:1.72;padding-left:16px;position:relative}
 .job li::before,.tlist li::before{content:'';position:absolute;left:2px;top:.62em;width:8px;height:8px;background:var(--leaf);border-radius:0 100% 0 100%;opacity:.95}
 .hl{color:var(--white);font-weight:600}
-.cd{font-family:var(--mono);font-size:10px;color:var(--red-l);background:var(--red-bg);padding:1px 5px;border-radius:2px;border:1px solid var(--red-bd)}
 
 /* PROJECTS */
 .proj{position:relative;padding:15px 17px;border:1px solid var(--bdr);border-radius:6px;background:var(--surf);margin-bottom:9px;transition:border-color .2s,box-shadow .2s,transform .18s}
@@ -175,9 +166,6 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
 }
 @media(max-width:700px){
   .page{padding:calc(64px + env(safe-area-inset-top,0px)) 18px calc(76px + env(safe-area-inset-bottom,0px))}
-  .stats{flex-wrap:wrap}
-  .stat{min-width:50%;border-bottom:1px solid var(--bdr)}
-  .stat:nth-child(2n){border-right:none}
   .tpanel.on{grid-template-columns:1fr}
   .tpanel .titem:last-child:nth-child(even){grid-column:auto}
   .job-top{flex-direction:column;gap:2px}
@@ -199,7 +187,6 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
   body{background:#fff;background-image:none;color:#222;font-size:11px}
   .g1,.g2,.band,.garland,.fdiv,.cursor,header::before,header::after{display:none}
   .name{background:none;-webkit-text-fill-color:#000;color:#000}
-  .stat-n,.stat:nth-child(even) .stat-n{text-shadow:none}
   .ttabs{display:none}
   .tpanel,.tpanel[hidden]{display:grid!important;grid-template-columns:1fr 1fr;margin-bottom:24px}
   .page{padding:0}
@@ -351,14 +338,6 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
   </div>
 </header>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat"><span class="stat-n" data-t="11">11</span><span class="stat-l">Games Released</span></div>
-  <div class="stat"><span class="stat-n" data-t="13">13</span><span class="stat-l">Prototypes</span></div>
-  <div class="stat"><span class="stat-n" data-t="7" data-s=" KB">7 KB</span><span class="stat-l">NPC Daily-Life Data</span></div>
-  <div class="stat"><span class="stat-n" data-t="0">0</span><span class="stat-l">Tick Functions · NPC System</span></div>
-</div>
-
 <div class="layout">
 <main>
 
@@ -366,7 +345,7 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
 <section class="section">
   <div class="sl">Professional Summary</div>
   <p class="summary">
-    Software engineer and game developer who builds games in Unreal Engine 5 (C++) and Unity (C#). As founder of Strawberries, I lead the technical side of my own game, Project Moon, covering gameplay, AI, animation, performance, tools and the asset pipeline. I favor event-driven, timer-based systems over per-frame Tick, compact cache-friendly data, and Data Assets that let designers tune everything without touching code.
+    Software engineer and game developer (B.Sc. Computer Science &amp; Engineering) and founder of Strawberries Studios, currently developing Project Moon, an open-world fantasy action game in Unreal Engine 5 C++. My work centers on event-driven, data-driven systems: pooling, pre-baked schedules and scenarios, and lightweight runtime selection from Data Assets, so NPC behavior and combat feel fluid with minimal CPU cost. Released 11 games and 13 prototypes on PC and mobile; aiming for senior engine and gameplay engineering.
   </p>
 </section>
 
@@ -384,8 +363,7 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
       <li>Founded and run my own game studio, and lead development of Project Moon, an open-world fantasy action game.</li>
       <li>Own the technical side end to end: architecture, gameplay, AI, animation, optimization and tooling.</li>
       <li>Reached a <span class="hl">playable MVP</span> with multiple enemy types, companions and a MetaHuman player character.</li>
-      <li>Build core systems in <span class="hl">native C++</span> with zero-Tick, event-driven design, using Blueprints only for designer-facing configuration.</li>
-      <li>Built an NPC daily-life system with <span class="hl">zero Tick functions</span>, where each NPC's behavior state packs into <span class="hl">one 32-bit word</span>. It runs on about <span class="hl">7 KB</span> of cache-line-aligned data, driven by a world-clock hour event and one-shot timers.</li>
+      <li>Build core systems in <span class="hl">native C++</span>, with Blueprints used only for designer-facing configuration.</li>
       <li>Run the content pipeline: AI-generated models cleaned up and optimized in Blender, then integrated into UE5, plus basic cinematics.</li>
     </ul>
   </div>
@@ -453,9 +431,9 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
 
   <article class="proj">
     <div class="pnum">05 · In Development</div>
-    <div class="ptitle">Project Moon <span class="pbadge">· playable MVP</span></div>
-    <div class="pdesc">An open-world fantasy action game with multiple enemy types, companions and a MetaHuman player character. Enemy, companion and NPC AI is written entirely in C++ alongside custom C++ animation systems. It also has an event-driven day/night cycle, NPC daily routines driven by in-game time, a player-led companion team, and Data Assets that designers can tune without touching code.</div>
-    <div class="ptags"><span class="ptag">UE5 C++</span><span class="ptag">Open World</span><span class="ptag">Zero-Tick</span><span class="ptag">MetaHuman</span><span class="ptag">Data Assets</span><span class="ptag">Custom Animation</span></div>
+    <div class="ptitle">Project Moon</div>
+    <div class="pdesc">An open-world fantasy action game, with multiple enemy types, companions and a MetaHuman player character. Enemy, companion and NPC AI is written entirely in C++, alongside custom C++ animation systems. It also has a day/night cycle with NPC daily routines, a player-led companion team, and Data Assets that designers can tune without touching code.</div>
+    <div class="ptags"><span class="ptag">UE5 C++</span><span class="ptag">Open World</span><span class="ptag">MetaHuman</span><span class="ptag">Data Assets</span><span class="ptag">Custom Animation</span></div>
   </article>
 </section>
 
@@ -500,21 +478,19 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
     <div class="sg">
       <div class="sgl">Gameplay &amp; AI</div>
       <div class="tags">
-        <span class="tag v">Finite State Machines</span><span class="tag v">Behavior Trees</span>
+        <span class="tag v">Behavior Trees</span><span class="tag v">Finite State Machines</span>
         <span class="tag v">GOAP</span><span class="tag v">Utility AI</span>
         <span class="tag m">Event-Driven Systems</span>
         <span class="tag m">Data-Driven NPC Pipelines</span>
         <span class="tag m">Parallel State Machines</span>
         <span class="tag m">Zero-Tick Brain Architecture</span>
-        <span class="tag m">Baked Schedule Tables</span>
-        <span class="tag m">Jump-Table Step Dispatch</span>
       </div>
     </div>
 
     <div class="sg">
       <div class="sgl">Animation Systems</div>
       <div class="tags">
-        <span class="tag v">FAnimInstanceProxy (worker-thread sampling)</span>
+        <span class="tag v">FAnimInstanceProxy</span>
         <span class="tag m">Mode A/B/C Blend Architecture</span>
         <span class="tag m">Snapshot Blending</span>
         <span class="tag m">Motion Matching (GASP C++)</span>
@@ -531,8 +507,6 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
     <div class="sg">
       <div class="sgl">Performance &amp; Systems</div>
       <div class="tags">
-        <span class="tag v">Cache-Line-Aligned Hot Structs</span>
-        <span class="tag v">Bit-Packed State Words</span>
         <span class="tag v">Actor Pooling</span>
         <span class="tag m">Overlap-Based Activation Volumes</span>
         <span class="tag m">Zero-Tick Architecture</span>
@@ -562,7 +536,7 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
     <div class="sg">
       <div class="sgl">Tools</div>
       <div class="tags">
-        <span class="tag m">Git</span><span class="tag m">Unreal Insights</span><span class="tag m">Blender</span>
+        <span class="tag m">Git</span>
         <span class="tag m">Agile / Scrum</span><span class="tag m">Technical Documentation</span>
       </div>
     </div>
@@ -584,60 +558,45 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
     <div class="tengine">Unreal Engine 5 — Native C++ Systems</div>
 
     <div class="titem">
-      <div class="ttitle">Day/night cycle <span class="cd">event-driven, no Tick</span></div>
+      <div class="ttitle">AI &amp; combat</div>
       <ul class="tlist">
-        <li>Run the sun, sky, fog, moon, post-process and tagged lamps from timers and baked per-minute data instead of Tick.</li>
-        <li>Broadcast hour, day and night events through multicast delegates so other systems subscribe instead of polling.</li>
-        <li>Hand lighting over at sunrise and sunset in two frames: switch the leaving group off, verify it, then switch the arriving group on.</li>
-        <li>Store the cycle in a Data Asset with an editor Bake step that validates itself, logs problems and rebuilds when stale.</li>
-        <li>Auto-discover lights and volumes by tag and keep the clock non-spatially-loaded for World Partition.</li>
-      </ul>
-    </div>
-
-    <div class="titem">
-      <div class="ttitle">NPC daily routines</div>
-      <ul class="tlist">
-        <li>Drive NPC schedules from the world clock's hour event: compare a baked weekly timetable to the current behavior and run a routine only when they differ.</li>
-        <li>Run routines as step lists on one-shot timers, with mid-day resume on level load and navmesh retry/skip fallbacks.</li>
-        <li>Keep NPC state packed into bit fields in a cache-line-aligned hot struct, and dispatch steps through a jump table.</li>
+        <li>Enemy, companion and NPC AI written entirely in C++ (no Behavior Trees), with attacks, dodging, defending and hit reactions.</li>
       </ul>
     </div>
 
     <div class="titem">
       <div class="ttitle">Animation</div>
       <ul class="tlist">
-        <li>Wrote a custom <span class="cd">FAnimInstanceProxy</span> that samples sequences directly on the worker thread, with no per-frame game-thread animation update.</li>
-        <li>Blend between states with a frozen snapshot of the outgoing pose, so interrupts never pop and a second sample is taken only during the blend window.</li>
-        <li>Bake the animation slot table from Data Assets on first load, rejecting invalid or additive sequences and logging missing assets.</li>
+        <li>Custom C++ animation systems for characters, with smooth transitions that don’t pop on interrupts and stable performance with many characters on screen.</li>
+      </ul>
+    </div>
+
+    <div class="titem">
+      <div class="ttitle">Living world</div>
+      <ul class="tlist">
+        <li>A day/night cycle and NPC daily routines (sleep, meals, idle) driven by in-game time.</li>
+        <li>Built an NPC daily-life system with zero Tick functions, with every detail set in Data Assets.</li>
       </ul>
     </div>
 
     <div class="titem">
       <div class="ttitle">Companions</div>
       <ul class="tlist">
-        <li>Companion NPCs with no actor Tick, AI-driven movement through direct velocity writes, and a pooled-style activate/deactivate lifecycle that clears timers on despawn.</li>
-        <li>Cache raw engine pointers from GC-owned UPROPERTYs after every anim rebuild, and register companions with the player character for a player-led team with commands and roster limits.</li>
-      </ul>
-    </div>
-
-    <div class="titem">
-      <div class="ttitle">AI &amp; combat</div>
-      <ul class="tlist">
-        <li>Enemy, companion and NPC AI written entirely in C++, with attacks, dodging, defending and hit reactions.</li>
+        <li>A player-led companion team with commands and roster limits.</li>
       </ul>
     </div>
 
     <div class="titem">
       <div class="ttitle">Data-driven design</div>
       <ul class="tlist">
-        <li>Designers tune schedules, animations, timings and lighting in Data Assets without changing code.</li>
+        <li>Designers tune values in Data Assets without changing code.</li>
       </ul>
     </div>
 
     <div class="titem">
       <div class="ttitle">Performance</div>
       <ul class="tlist">
-        <li>Event-driven logic, distance-based AI and animation LOD, and compact cache-line-aligned data for hot paths.</li>
+        <li>Event-driven logic, distance-based AI and animation LOD, and compact data layouts for hot paths.</li>
       </ul>
     </div>
   </div>
@@ -647,23 +606,31 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
     <div class="tengine">Unity — C# Systems Architecture</div>
 
     <div class="titem">
-      <div class="ttitle">AI — BTs, FSMs &amp; Utility AI</div>
-      <div class="tdesc">All decision logic built from scratch in C# — no engine defaults, no third-party frameworks. Behavior Trees, Finite State Machines and Utility AI systems fully owned at the code level, applied across strategy, simulation and open-world environments sustaining large NPC counts on mobile without frame degradation. State transitions are discrete and auditable — no implicit graph traversal, no hidden per-frame evaluation.</div>
+      <div class="ttitle">AI</div>
+      <ul class="tlist">
+        <li>Behavior trees, FSMs and utility AI written from scratch in C#.</li>
+      </ul>
     </div>
 
     <div class="titem">
-      <div class="ttitle">Data-Driven Scriptable Objects</div>
-      <div class="tdesc">Full ScriptableObject pipelines as the single source of truth across all projects — config fully decoupled from logic. SO values are injectable at runtime via JSON feeds from ASP.NET backends and external REST APIs, so server data flows directly into game state without touching code or triggering rebuilds. Cross-game progression, save state and live configuration changes all resolve through the same pipeline. The contract is explicit: <span class="cd">Server → SO → game</span>.</div>
+      <div class="ttitle">Data-driven design</div>
+      <ul class="tlist">
+        <li>ScriptableObjects as the source of truth, fed by JSON from ASP.NET and REST backends.</li>
+      </ul>
     </div>
 
     <div class="titem">
-      <div class="ttitle">Event-Driven, Near-Zero Update</div>
-      <div class="tdesc">The Update loop is reserved strictly for animation, physics and player input, where frame-continuous evaluation is unavoidable. Every other system — state changes, NPC triggers, UI updates, progression tracking — responds to C# events and UnityEvent signals. No continuous polling, no redundant per-frame checks: systems are wired at bind time so event emission is the only path to state change.</div>
+      <div class="ttitle">Event-driven</div>
+      <ul class="tlist">
+        <li>Update used only for animation, physics and input, with everything else on events.</li>
+      </ul>
     </div>
 
     <div class="titem">
-      <div class="ttitle">Performance — DOTS &amp; World Streaming</div>
-      <div class="tdesc">World streaming and object pooling for large open environments, combined with AI LOD techniques and pooled components, sustain stable frame rates on mobile targets. 3D model optimization happens directly in Unity — polycounts, LOD chains, simplified materials — without relying on post-export fixes. <span class="cd">ECS</span>, <span class="cd">Job System</span> and <span class="cd">Burst Compiler</span> are applied for CPU-bound simulation workloads where single-threaded C# evaluation could not meet frame time targets.</div>
+      <div class="ttitle">Performance</div>
+      <ul class="tlist">
+        <li>World streaming, object pooling, AI LOD, and ECS/Jobs/Burst for CPU-heavy simulation.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -721,32 +688,6 @@ footer{margin-top:20px;padding-top:22px;border-top:1px solid var(--bdr);display:
       else if(e.key==='End')n=tabs[tabs.length-1];
       if(n){e.preventDefault();select(n)}
     });
-  });
-
-  /* Count-up stats (final values are already in the HTML; this only animates) */
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce||!('IntersectionObserver' in window))return;
-
-  function countUp(el){
-    var target=parseInt(el.dataset.t,10),suffix=el.dataset.s||'',start=null,dur=1000;
-    if(isNaN(target))return;
-    function step(ts){
-      if(start===null)start=ts;
-      var p=Math.min((ts-start)/dur,1);
-      el.textContent=Math.floor(p*target)+suffix;
-      if(p<1)requestAnimationFrame(step);
-      else el.textContent=target+suffix;
-    }
-    requestAnimationFrame(step);
-  }
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){countUp(e.target);io.unobserve(e.target)}
-    });
-  },{threshold:.5});
-  document.querySelectorAll('.stat-n[data-t]').forEach(function(el){
-    el.textContent='0'+(el.dataset.s||'');
-    io.observe(el);
   });
 })();
 </script>
